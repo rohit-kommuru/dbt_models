@@ -1,0 +1,25 @@
+models:
+- name: model_analysis
+  columns:
+  - name: assigned_sex_at_birth
+    tests:
+    - accepted_values:
+        values:
+        - F
+        - M
+        quote: true
+    - dbt_expectations.expect_column_value_lengths_to_equal:
+        value: 1
+        row_condition: '`assigned_sex_at_birth` is not null'
+  - name: count
+    tests:
+    - dbt_utils.accepted_range:
+        min_value: 5
+        max_value: 18480
+  - name: name
+    tests:
+    - dbt_expectations.expect_column_value_lengths_to_be_between:
+        min_value: 2
+        max_value: 14
+        row_condition: '`name` is not null'
+
