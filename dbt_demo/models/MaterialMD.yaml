@@ -1,0 +1,2470 @@
+models:
+- name: model_MaterialMD
+  columns:
+  - name: Client_MANDT
+    tests:
+    - accepted_values:
+        values:
+        - '400'
+        quote: true
+    - dbt_expectations.expect_column_value_lengths_to_equal:
+        value: 3
+        row_condition: '`Client_MANDT` is not null'
+  - name: FlagMaterialForDeletionAtClientLevel_MARA_LVORM
+    tests:
+    - accepted_values:
+        values:
+        - ''
+        quote: true
+    - dbt_expectations.expect_column_value_lengths_to_be_between:
+        min_value: 0
+        max_value: 1
+        row_condition: '`FlagMaterialForDeletionAtClientLevel_MARA_LVORM` is not null'
+  - name: IndustrySector_MARA_MBRSH
+    tests:
+    - accepted_values:
+        values:
+        - A
+        - C
+        - M
+        - P
+        quote: true
+    - dbt_expectations.expect_column_value_lengths_to_equal:
+        value: 1
+        row_condition: '`IndustrySector_MARA_MBRSH` is not null'
+  - name: BasicMaterial_MARA_WRKST
+    tests:
+    - accepted_values:
+        values:
+        - ''
+        - Material Used in Shot Weight Calculation
+        quote: true
+    - dbt_expectations.expect_column_value_lengths_to_be_between:
+        min_value: 0
+        max_value: 40
+        row_condition: '`BasicMaterial_MARA_WRKST` is not null'
+  - name: PurchasingValueKey_MARA_EKWSL
+    tests:
+    - accepted_values:
+        values:
+        - ''
+        - '1'
+        - '3'
+        quote: true
+    - dbt_expectations.expect_column_value_lengths_to_be_between:
+        min_value: 0
+        max_value: 1
+        row_condition: '`PurchasingValueKey_MARA_EKWSL` is not null'
+  - name: ContainerRequirements_MARA_BEHVO
+    tests:
+    - accepted_values:
+        values:
+        - ''
+        quote: true
+    - dbt_expectations.expect_column_value_lengths_to_equal:
+        value: 0
+        row_condition: '`ContainerRequirements_MARA_BEHVO` is not null'
+  - name: StorageConditions_MARA_RAUBE
+    tests:
+    - accepted_values:
+        values:
+        - ''
+        - '01'
+        - HU
+        quote: true
+    - dbt_expectations.expect_column_value_lengths_to_be_between:
+        min_value: 0
+        max_value: 2
+        row_condition: '`StorageConditions_MARA_RAUBE` is not null'
+  - name: TransportationGroup_MARA_TRAGR
+    tests:
+    - accepted_values:
+        values:
+        - ''
+        - '0001'
+        quote: true
+    - dbt_expectations.expect_column_value_lengths_to_be_between:
+        min_value: 0
+        max_value: 4
+        row_condition: '`TransportationGroup_MARA_TRAGR` is not null'
+  - name: Division_MARA_SPART
+    tests:
+    - accepted_values:
+        values:
+        - ''
+        - '00'
+        - '10'
+        - '30'
+        quote: true
+    - dbt_expectations.expect_column_value_lengths_to_be_between:
+        min_value: 0
+        max_value: 2
+        row_condition: '`Division_MARA_SPART` is not null'
+  - name: Competitor_MARA_KUNNR
+    tests:
+    - accepted_values:
+        values:
+        - ''
+        quote: true
+    - dbt_expectations.expect_column_value_lengths_to_equal:
+        value: 0
+        row_condition: '`Competitor_MARA_KUNNR` is not null'
+  - name: EuropeanArticleNumber_MARA_EANNR
+    tests:
+    - accepted_values:
+        values:
+        - ''
+        quote: true
+    - dbt_expectations.expect_column_value_lengths_to_equal:
+        value: 0
+        row_condition: '`EuropeanArticleNumber_MARA_EANNR` is not null'
+  - name: Quantity_NumberOfGrgiSlipsToBePrinted_MARA_WESCH
+    tests:
+    - accepted_values:
+        values:
+        - '0'
+        quote: false
+    - dbt_utils.accepted_range:
+        min_value: 0
+        max_value: 0
+  - name: ProcurementRule_MARA_BWVOR
+    tests:
+    - accepted_values:
+        values:
+        - ''
+        quote: true
+    - dbt_expectations.expect_column_value_lengths_to_equal:
+        value: 0
+        row_condition: '`ProcurementRule_MARA_BWVOR` is not null'
+  - name: SourceOfSupply_MARA_BWSCL
+    tests:
+    - accepted_values:
+        values:
+        - ''
+        quote: true
+    - dbt_expectations.expect_column_value_lengths_to_equal:
+        value: 0
+        row_condition: '`SourceOfSupply_MARA_BWSCL` is not null'
+  - name: SeasonCategory_MARA_SAISO
+    tests:
+    - accepted_values:
+        values:
+        - ''
+        quote: true
+    - dbt_expectations.expect_column_value_lengths_to_equal:
+        value: 0
+        row_condition: '`SeasonCategory_MARA_SAISO` is not null'
+  - name: LabelType_MARA_ETIAR
+    tests:
+    - accepted_values:
+        values:
+        - ''
+        quote: true
+    - dbt_expectations.expect_column_value_lengths_to_equal:
+        value: 0
+        row_condition: '`LabelType_MARA_ETIAR` is not null'
+  - name: LabelForm_MARA_ETIFO
+    tests:
+    - accepted_values:
+        values:
+        - ''
+        quote: true
+    - dbt_expectations.expect_column_value_lengths_to_equal:
+        value: 0
+        row_condition: '`LabelForm_MARA_ETIFO` is not null'
+  - name: Deactivated_MARA_ENTAR
+    tests:
+    - accepted_values:
+        values:
+        - ''
+        quote: true
+    - dbt_expectations.expect_column_value_lengths_to_equal:
+        value: 0
+        row_condition: '`Deactivated_MARA_ENTAR` is not null'
+  - name: InternationalArticleNumber_Eanupc_MARA_EAN11
+    tests:
+    - accepted_values:
+        values:
+        - ''
+        quote: true
+    - dbt_expectations.expect_column_value_lengths_to_equal:
+        value: 0
+        row_condition: '`InternationalArticleNumber_Eanupc_MARA_EAN11` is not null'
+  - name: CategoryOfInternationalArticleNumber_Ean_MARA_NUMTP
+    tests:
+    - accepted_values:
+        values:
+        - ''
+        quote: true
+    - dbt_expectations.expect_column_value_lengths_to_equal:
+        value: 0
+        row_condition: '`CategoryOfInternationalArticleNumber_Ean_MARA_NUMTP` is not
+          null'
+  - name: StockTransferNetChangeCosting_MARA_AEKLK
+    tests:
+    - accepted_values:
+        values:
+        - ''
+        quote: true
+    - dbt_expectations.expect_column_value_lengths_to_equal:
+        value: 0
+        row_condition: '`StockTransferNetChangeCosting_MARA_AEKLK` is not null'
+  - name: CadIndicator_MARA_CADKZ
+    tests:
+    - accepted_values:
+        values:
+        - ''
+        quote: true
+    - dbt_expectations.expect_column_value_lengths_to_equal:
+        value: 0
+        row_condition: '`CadIndicator_MARA_CADKZ` is not null'
+  - name: QmInProcurementIsActive_MARA_QMPUR
+    tests:
+    - accepted_values:
+        values:
+        - ''
+        - X
+        quote: true
+    - dbt_expectations.expect_column_value_lengths_to_be_between:
+        min_value: 0
+        max_value: 1
+        row_condition: '`QmInProcurementIsActive_MARA_QMPUR` is not null'
+  - name: AllowedPackagingWeight_MARA_ERGEW
+    tests:
+    - accepted_values:
+        values:
+        - '0'
+        quote: false
+    - dbt_utils.accepted_range:
+        min_value: 0
+        max_value: 0
+  - name: UnitOfWeight_AllowedPackagingWeight_MARA_ERGEI
+    tests:
+    - accepted_values:
+        values:
+        - ''
+        quote: true
+    - dbt_expectations.expect_column_value_lengths_to_equal:
+        value: 0
+        row_condition: '`UnitOfWeight_AllowedPackagingWeight_MARA_ERGEI` is not null'
+  - name: AllowedPackagingVolume_MARA_ERVOL
+    tests:
+    - accepted_values:
+        values:
+        - '0'
+        quote: false
+    - dbt_utils.accepted_range:
+        min_value: 0
+        max_value: 0
+  - name: VolumeUnit_AllowedPackagingVolume_MARA_ERVOE
+    tests:
+    - accepted_values:
+        values:
+        - ''
+        quote: true
+    - dbt_expectations.expect_column_value_lengths_to_equal:
+        value: 0
+        row_condition: '`VolumeUnit_AllowedPackagingVolume_MARA_ERVOE` is not null'
+  - name: ExcessWeightToleranceForHandlingUnit_MARA_GEWTO
+    tests:
+    - accepted_values:
+        values:
+        - '0'
+        quote: false
+    - dbt_utils.accepted_range:
+        min_value: 0
+        max_value: 0
+  - name: ExcessVolumeToleranceOfTheHandlingUnit_MARA_VOLTO
+    tests:
+    - accepted_values:
+        values:
+        - '0'
+        quote: false
+    - dbt_utils.accepted_range:
+        min_value: 0
+        max_value: 0
+  - name: VariablePurchaseOrderUnitActive_MARA_VABME
+    tests:
+    - accepted_values:
+        values:
+        - ''
+        - '1'
+        quote: true
+    - dbt_expectations.expect_column_value_lengths_to_be_between:
+        min_value: 0
+        max_value: 1
+        row_condition: '`VariablePurchaseOrderUnitActive_MARA_VABME` is not null'
+  - name: RevisionLevelHasBeenAssignedToTheMaterial_MARA_KZREV
+    tests:
+    - accepted_values:
+        values:
+        - ''
+        - X
+        quote: true
+    - dbt_expectations.expect_column_value_lengths_to_be_between:
+        min_value: 0
+        max_value: 1
+        row_condition: '`RevisionLevelHasBeenAssignedToTheMaterial_MARA_KZREV` is
+          not null'
+  - name: ConfigurableMaterial_MARA_KZKFG
+    tests:
+    - accepted_values:
+        values:
+        - ''
+        - X
+        quote: true
+    - dbt_expectations.expect_column_value_lengths_to_be_between:
+        min_value: 0
+        max_value: 1
+        row_condition: '`ConfigurableMaterial_MARA_KZKFG` is not null'
+  - name: BatchManagementRequirementIndicator_MARA_XCHPF
+    tests:
+    - accepted_values:
+        values:
+        - ''
+        quote: true
+    - dbt_expectations.expect_column_value_lengths_to_be_between:
+        min_value: 0
+        max_value: 1
+        row_condition: '`BatchManagementRequirementIndicator_MARA_XCHPF` is not null'
+  - name: PackagingMaterialType_MARA_VHART
+    tests:
+    - accepted_values:
+        values:
+        - ''
+        quote: true
+    - dbt_expectations.expect_column_value_lengths_to_equal:
+        value: 0
+        row_condition: '`PackagingMaterialType_MARA_VHART` is not null'
+  - name: MaximumLevel_ByVolume_MARA_FUELG
+    tests:
+    - accepted_values:
+        values:
+        - '0'
+        quote: false
+    - dbt_utils.accepted_range:
+        min_value: 0
+        max_value: 0
+  - name: StackingFactor_MARA_STFAK
+    tests:
+    - accepted_values:
+        values:
+        - '0'
+        quote: false
+    - dbt_utils.accepted_range:
+        min_value: 0
+        max_value: 0
+  - name: MaterialGroup_PackagingMaterials_MARA_MAGRV
+    tests:
+    - accepted_values:
+        values:
+        - ''
+        quote: true
+    - dbt_expectations.expect_column_value_lengths_to_equal:
+        value: 0
+        row_condition: '`MaterialGroup_PackagingMaterials_MARA_MAGRV` is not null'
+  - name: AuthorizationGroup_MARA_BEGRU
+    tests:
+    - accepted_values:
+        values:
+        - ''
+        quote: true
+    - dbt_expectations.expect_column_value_lengths_to_equal:
+        value: 0
+        row_condition: '`AuthorizationGroup_MARA_BEGRU` is not null'
+  - name: ValidFromDate_MARA_DATAB
+    tests:
+    - accepted_values:
+        values:
+        - '0001-01-01'
+        quote: false
+  - name: DeletionDate_MARA_LIQDT
+    tests:
+    - accepted_values:
+        values:
+        - '0001-01-01'
+        quote: false
+  - name: SeasonYear_MARA_SAISJ
+    tests:
+    - accepted_values:
+        values:
+        - ''
+        quote: true
+    - dbt_expectations.expect_column_value_lengths_to_equal:
+        value: 0
+        row_condition: '`SeasonYear_MARA_SAISJ` is not null'
+  - name: PriceBandCategory_MARA_PLGTP
+    tests:
+    - accepted_values:
+        values:
+        - ''
+        quote: true
+    - dbt_expectations.expect_column_value_lengths_to_equal:
+        value: 0
+        row_condition: '`PriceBandCategory_MARA_PLGTP` is not null'
+  - name: EmptiesBillOfMaterial_MARA_MLGUT
+    tests:
+    - accepted_values:
+        values:
+        - ''
+        quote: true
+    - dbt_expectations.expect_column_value_lengths_to_equal:
+        value: 0
+        row_condition: '`EmptiesBillOfMaterial_MARA_MLGUT` is not null'
+  - name: MaterialCategory_MARA_ATTYP
+    tests:
+    - accepted_values:
+        values:
+        - ''
+        quote: true
+    - dbt_expectations.expect_column_value_lengths_to_equal:
+        value: 0
+        row_condition: '`MaterialCategory_MARA_ATTYP` is not null'
+  - name: Indicator_MaterialCanBeCoProduct_MARA_KZKUP
+    tests:
+    - accepted_values:
+        values:
+        - ''
+        - X
+        quote: true
+    - dbt_expectations.expect_column_value_lengths_to_be_between:
+        min_value: 0
+        max_value: 1
+        row_condition: '`Indicator_MaterialCanBeCoProduct_MARA_KZKUP` is not null'
+  - name: Indicator_TheMaterialHasAFollowUpMaterial_MARAKZNFM
+    tests:
+    - accepted_values:
+        values:
+        - ''
+        - X
+        quote: true
+    - dbt_expectations.expect_column_value_lengths_to_equal:
+        value: 0
+        row_condition: '`Indicator_TheMaterialHasAFollowUpMaterial_MARAKZNFM` is not
+          null'
+  - name: PricingReferenceMaterial_MARA_PMATA
+    tests:
+    - accepted_values:
+        values:
+        - ''
+        quote: true
+    - dbt_expectations.expect_column_value_lengths_to_equal:
+        value: 0
+        row_condition: '`PricingReferenceMaterial_MARA_PMATA` is not null'
+  - name: CrossDistributionChainMaterialStatus_MARA_MSTAV
+    tests:
+    - accepted_values:
+        values:
+        - ''
+        - '39'
+        - '40'
+        - '60'
+        quote: true
+    - dbt_expectations.expect_column_value_lengths_to_be_between:
+        min_value: 0
+        max_value: 2
+        row_condition: '`CrossDistributionChainMaterialStatus_MARA_MSTAV` is not null'
+  - name: TaxClassificationOfTheMaterial_MARA_TAKLV
+    tests:
+    - accepted_values:
+        values:
+        - ''
+        quote: true
+    - dbt_expectations.expect_column_value_lengths_to_equal:
+        value: 0
+        row_condition: '`TaxClassificationOfTheMaterial_MARA_TAKLV` is not null'
+  - name: CatalogProfile_MARA_RBNRM
+    tests:
+    - accepted_values:
+        values:
+        - ''
+        quote: true
+    - dbt_expectations.expect_column_value_lengths_to_equal:
+        value: 0
+        row_condition: '`CatalogProfile_MARA_RBNRM` is not null'
+  - name: StoragePercentage_MARA_MHDLP
+    tests:
+    - accepted_values:
+        values:
+        - '0'
+        quote: false
+    - dbt_utils.accepted_range:
+        min_value: 0
+        max_value: 0
+  - name: ContentUnit_MARA_INHME
+    tests:
+    - accepted_values:
+        values:
+        - ''
+        quote: true
+    - dbt_expectations.expect_column_value_lengths_to_equal:
+        value: 0
+        row_condition: '`ContentUnit_MARA_INHME` is not null'
+  - name: NetContents_MARA_INHAL
+    tests:
+    - accepted_values:
+        values:
+        - '0'
+        quote: false
+    - dbt_utils.accepted_range:
+        min_value: 0
+        max_value: 0
+  - name: ComparisonPriceUnit_MARA_VPREH
+    tests:
+    - accepted_values:
+        values:
+        - '0'
+        quote: false
+    - dbt_utils.accepted_range:
+        min_value: 0
+        max_value: 0
+  - name: GrossContents_MARA_INHBR
+    tests:
+    - accepted_values:
+        values:
+        - '0'
+        quote: false
+    - dbt_utils.accepted_range:
+        min_value: 0
+        max_value: 0
+  - name: QuantityConversionMethod_MARA_CMETH
+    tests:
+    - accepted_values:
+        values:
+        - ''
+        quote: true
+    - dbt_expectations.expect_column_value_lengths_to_equal:
+        value: 0
+        row_condition: '`QuantityConversionMethod_MARA_CMETH` is not null'
+  - name: EnvironmentallyRelevant_MARA_KZUMW
+    tests:
+    - accepted_values:
+        values:
+        - ''
+        - X
+        quote: true
+    - dbt_expectations.expect_column_value_lengths_to_be_between:
+        min_value: 0
+        max_value: 1
+        row_condition: '`EnvironmentallyRelevant_MARA_KZUMW` is not null'
+  - name: ProductAllocationDeterminationProcedure_MARA_KOSCH
+    tests:
+    - accepted_values:
+        values:
+        - ''
+        quote: true
+    - dbt_expectations.expect_column_value_lengths_to_equal:
+        value: 0
+        row_condition: '`ProductAllocationDeterminationProcedure_MARA_KOSCH` is not
+          null'
+  - name: PricingProfileForVariants_MARA_SPROF
+    tests:
+    - accepted_values:
+        values:
+        - ''
+        quote: true
+    - dbt_expectations.expect_column_value_lengths_to_equal:
+        value: 0
+        row_condition: '`PricingProfileForVariants_MARA_SPROF` is not null'
+  - name: MaterialQualifiesForDiscountInKind_MARA_NRFHG
+    tests:
+    - accepted_values:
+        values:
+        - ''
+        quote: true
+    - dbt_expectations.expect_column_value_lengths_to_equal:
+        value: 0
+        row_condition: '`MaterialQualifiesForDiscountInKind_MARA_NRFHG` is not null'
+  - name: ManufacturerNumber_MARA_MFRNR
+    tests:
+    - accepted_values:
+        values:
+        - ''
+        - 0000118516
+        - 0000126931
+        - 0000127809
+        - 0000128372
+        quote: true
+    - dbt_expectations.expect_column_value_lengths_to_be_between:
+        min_value: 0
+        max_value: 10
+        row_condition: '`ManufacturerNumber_MARA_MFRNR` is not null'
+  - name: NumberInventoryManagedMaterial_MARA_BMATN
+    tests:
+    - accepted_values:
+        values:
+        - ''
+        quote: true
+    - dbt_expectations.expect_column_value_lengths_to_equal:
+        value: 0
+        row_condition: '`NumberInventoryManagedMaterial_MARA_BMATN` is not null'
+  - name: MfrPartProfile_MARA_MPROF
+    tests:
+    - accepted_values:
+        values:
+        - ''
+        quote: true
+    - dbt_expectations.expect_column_value_lengths_to_equal:
+        value: 0
+        row_condition: '`MfrPartProfile_MARA_MPROF` is not null'
+  - name: UnitsOfMeasureUsage_MARA_KZWSM
+    tests:
+    - accepted_values:
+        values:
+        - ''
+        quote: true
+    - dbt_expectations.expect_column_value_lengths_to_equal:
+        value: 0
+        row_condition: '`UnitsOfMeasureUsage_MARA_KZWSM` is not null'
+  - name: RolloutInASeason_MARA_SAITY
+    tests:
+    - accepted_values:
+        values:
+        - ''
+        quote: true
+    - dbt_expectations.expect_column_value_lengths_to_equal:
+        value: 0
+        row_condition: '`RolloutInASeason_MARA_SAITY` is not null'
+  - name: DangerousGoodsIndicatorProfile_MARA_PROFL
+    tests:
+    - accepted_values:
+        values:
+        - ''
+        - GPP
+        - NAU
+        - NDG
+        quote: true
+    - dbt_expectations.expect_column_value_lengths_to_be_between:
+        min_value: 0
+        max_value: 3
+        row_condition: '`DangerousGoodsIndicatorProfile_MARA_PROFL` is not null'
+  - name: Indicator_HighlyViscous_MARA_IHIVI
+    tests:
+    - accepted_values:
+        values:
+        - ''
+        quote: true
+    - dbt_expectations.expect_column_value_lengths_to_equal:
+        value: 0
+        row_condition: '`Indicator_HighlyViscous_MARA_IHIVI` is not null'
+  - name: Indicator_InBulkLiquid_MARA_ILOOS
+    tests:
+    - accepted_values:
+        values:
+        - ''
+        quote: true
+    - dbt_expectations.expect_column_value_lengths_to_equal:
+        value: 0
+        row_condition: '`Indicator_InBulkLiquid_MARA_ILOOS` is not null'
+  - name: LevelOfExplicitnessForSerialNumber_MARA_SERLV
+    tests:
+    - accepted_values:
+        values:
+        - ''
+        - '1'
+        quote: true
+    - dbt_expectations.expect_column_value_lengths_to_be_between:
+        min_value: 0
+        max_value: 1
+        row_condition: '`LevelOfExplicitnessForSerialNumber_MARA_SERLV` is not null'
+  - name: PackagingMaterialIsClosedPackaging_MARA_KZGVH
+    tests:
+    - accepted_values:
+        values:
+        - ''
+        quote: true
+    - dbt_expectations.expect_column_value_lengths_to_equal:
+        value: 0
+        row_condition: '`PackagingMaterialIsClosedPackaging_MARA_KZGVH` is not null'
+  - name: Indicator_ApprovedBatchRecordRequired_MARA_XGCHP
+    tests:
+    - accepted_values:
+        values:
+        - ''
+        - X
+        quote: true
+    - dbt_expectations.expect_column_value_lengths_to_be_between:
+        min_value: 0
+        max_value: 1
+        row_condition: '`Indicator_ApprovedBatchRecordRequired_MARA_XGCHP` is not
+          null'
+  - name: AssignEffectivityParameterValuesOverrideChangeNumbers_MARA_KZEFF
+    tests:
+    - accepted_values:
+        values:
+        - ''
+        - X
+        quote: true
+    - dbt_expectations.expect_column_value_lengths_to_be_between:
+        min_value: 0
+        max_value: 1
+        row_condition: '`AssignEffectivityParameterValuesOverrideChangeNumbers_MARA_KZEFF`
+          is not null'
+  - name: MaterialCompletionLevel_MARA_COMPL
+    tests:
+    - accepted_values:
+        values:
+        - '00'
+        quote: true
+    - dbt_expectations.expect_column_value_lengths_to_equal:
+        value: 2
+        row_condition: '`MaterialCompletionLevel_MARA_COMPL` is not null'
+  - name: PeriodIndicatorForShelfLifeExpirationDate_MARA_IPRKZ
+    tests:
+    - accepted_values:
+        values:
+        - D
+        - M
+        quote: true
+    - dbt_expectations.expect_column_value_lengths_to_equal:
+        value: 1
+        row_condition: '`PeriodIndicatorForShelfLifeExpirationDate_MARA_IPRKZ` is
+          not null'
+  - name: RoundingRuleForCalculationOfSled_MARA_RDMHD
+    tests:
+    - accepted_values:
+        values:
+        - ''
+        quote: true
+    - dbt_expectations.expect_column_value_lengths_to_equal:
+        value: 0
+        row_condition: '`RoundingRuleForCalculationOfSled_MARA_RDMHD` is not null'
+  - name: Indicator_ProductCompositionPrintedOnPackaging_MARA_PRZUS
+    tests:
+    - accepted_values:
+        values:
+        - ''
+        quote: true
+    - dbt_expectations.expect_column_value_lengths_to_equal:
+        value: 0
+        row_condition: '`Indicator_ProductCompositionPrintedOnPackaging_MARA_PRZUS`
+          is not null'
+  - name: GenericMaterialWithLogisticalVariants__MARA_BFLME
+    tests:
+    - accepted_values:
+        values:
+        - ''
+        quote: true
+    - dbt_expectations.expect_column_value_lengths_to_equal:
+        value: 0
+        row_condition: '`GenericMaterialWithLogisticalVariants__MARA_BFLME` is not
+          null'
+  - name: MaterialIsLocked_MARA_MATFI
+    tests:
+    - accepted_values:
+        values:
+        - ''
+        quote: true
+    - dbt_expectations.expect_column_value_lengths_to_equal:
+        value: 0
+        row_condition: '`MaterialIsLocked_MARA_MATFI` is not null'
+  - name: RelevantForConfigurationManagement_MARA_CMREL
+    tests:
+    - accepted_values:
+        values:
+        - ''
+        quote: true
+    - dbt_expectations.expect_column_value_lengths_to_equal:
+        value: 0
+        row_condition: '`RelevantForConfigurationManagement_MARA_CMREL` is not null'
+  - name: AssortmentListType_MARA_BBTYP
+    tests:
+    - accepted_values:
+        values:
+        - ''
+        quote: true
+    - dbt_expectations.expect_column_value_lengths_to_equal:
+        value: 0
+        row_condition: '`AssortmentListType_MARA_BBTYP` is not null'
+  - name: ExpirationDate_MARA_SLED_BBD
+    tests:
+    - accepted_values:
+        values:
+        - ''
+        - B
+        quote: true
+    - dbt_expectations.expect_column_value_lengths_to_be_between:
+        min_value: 0
+        max_value: 1
+        row_condition: '`ExpirationDate_MARA_SLED_BBD` is not null'
+  - name: GlobalTradeItemNumberVariant_MARA_GTIN_VARIANT
+    tests:
+    - accepted_values:
+        values:
+        - ''
+        quote: true
+    - dbt_expectations.expect_column_value_lengths_to_equal:
+        value: 0
+        row_condition: '`GlobalTradeItemNumberVariant_MARA_GTIN_VARIANT` is not null'
+  - name: MaterialNumberOfTheGenericMaterialInPrepackMaterials_MARA_GENNR
+    tests:
+    - accepted_values:
+        values:
+        - ''
+        quote: true
+    - dbt_expectations.expect_column_value_lengths_to_equal:
+        value: 0
+        row_condition: '`MaterialNumberOfTheGenericMaterialInPrepackMaterials_MARA_GENNR`
+          is not null'
+  - name: ReferenceMaterialForMaterialsPackedInSameWay_MARA_RMATP
+    tests:
+    - accepted_values:
+        values:
+        - ''
+        quote: true
+    - dbt_expectations.expect_column_value_lengths_to_equal:
+        value: 0
+        row_condition: '`ReferenceMaterialForMaterialsPackedInSameWay_MARA_RMATP`
+          is not null'
+  - name: Indicator_GlobalDataSynchronizationRelevant_MARA_GDS_RELEVANT
+    tests:
+    - accepted_values:
+        values:
+        - ''
+        quote: true
+    - dbt_expectations.expect_column_value_lengths_to_equal:
+        value: 0
+        row_condition: '`Indicator_GlobalDataSynchronizationRelevant_MARA_GDS_RELEVANT`
+          is not null'
+  - name: AcceptanceAtOrigin_MARA_WEORA
+    tests:
+    - accepted_values:
+        values:
+        - ''
+        quote: true
+    - dbt_expectations.expect_column_value_lengths_to_equal:
+        value: 0
+        row_condition: '`AcceptanceAtOrigin_MARA_WEORA` is not null'
+  - name: StandardHuType_MARA_HUTYP_DFLT
+    tests:
+    - accepted_values:
+        values:
+        - ''
+        quote: true
+    - dbt_expectations.expect_column_value_lengths_to_equal:
+        value: 0
+        row_condition: '`StandardHuType_MARA_HUTYP_DFLT` is not null'
+  - name: Pilferable_MARA_PILFERABLE
+    tests:
+    - accepted_values:
+        values:
+        - ''
+        quote: true
+    - dbt_expectations.expect_column_value_lengths_to_equal:
+        value: 0
+        row_condition: '`Pilferable_MARA_PILFERABLE` is not null'
+  - name: WarehouseStorageCondition_MARA_WHSTC
+    tests:
+    - accepted_values:
+        values:
+        - ''
+        quote: true
+    - dbt_expectations.expect_column_value_lengths_to_equal:
+        value: 0
+        row_condition: '`WarehouseStorageCondition_MARA_WHSTC` is not null'
+  - name: WarehouseMaterialGroup_MARA_WHMATGR
+    tests:
+    - accepted_values:
+        values:
+        - ''
+        quote: true
+    - dbt_expectations.expect_column_value_lengths_to_equal:
+        value: 0
+        row_condition: '`WarehouseMaterialGroup_MARA_WHMATGR` is not null'
+  - name: HandlingIndicator_MARA_HNDLCODE
+    tests:
+    - accepted_values:
+        values:
+        - ''
+        quote: true
+    - dbt_expectations.expect_column_value_lengths_to_equal:
+        value: 0
+        row_condition: '`HandlingIndicator_MARA_HNDLCODE` is not null'
+  - name: RelevantForHazardousSubstances_MARA_HAZMAT
+    tests:
+    - accepted_values:
+        values:
+        - ''
+        quote: true
+    - dbt_expectations.expect_column_value_lengths_to_equal:
+        value: 0
+        row_condition: '`RelevantForHazardousSubstances_MARA_HAZMAT` is not null'
+  - name: HandlingUnitType_MARA_HUTYP
+    tests:
+    - accepted_values:
+        values:
+        - ''
+        quote: true
+    - dbt_expectations.expect_column_value_lengths_to_equal:
+        value: 0
+        row_condition: '`HandlingUnitType_MARA_HUTYP` is not null'
+  - name: VariableTareWeight_MARA_TARE_VAR
+    tests:
+    - accepted_values:
+        values:
+        - ''
+        quote: true
+    - dbt_expectations.expect_column_value_lengths_to_equal:
+        value: 0
+        row_condition: '`VariableTareWeight_MARA_TARE_VAR` is not null'
+  - name: MaximumAllowedCapacityOfPackagingMaterial_MARA_MAXC
+    tests:
+    - accepted_values:
+        values:
+        - '0'
+        quote: false
+    - dbt_utils.accepted_range:
+        min_value: 0
+        max_value: 0
+  - name: OvercapacityToleranceOfTheHandlingUnit_MARA_MAXC_TOL
+    tests:
+    - accepted_values:
+        values:
+        - '0'
+        quote: false
+    - dbt_utils.accepted_range:
+        min_value: 0
+        max_value: 0
+  - name: MaximumPackingLengthOfPackagingMaterial_MARA_MAXL
+    tests:
+    - accepted_values:
+        values:
+        - '0'
+        quote: false
+    - dbt_utils.accepted_range:
+        min_value: 0
+        max_value: 0
+  - name: MaximumPackingWidthOfPackagingMaterial_MARA_MAXB
+    tests:
+    - accepted_values:
+        values:
+        - '0'
+        quote: false
+    - dbt_utils.accepted_range:
+        min_value: 0
+        max_value: 0
+  - name: MaximumPackingHeightOfPackagingMaterial_MARA_MAXH
+    tests:
+    - accepted_values:
+        values:
+        - '0'
+        quote: false
+    - dbt_utils.accepted_range:
+        min_value: 0
+        max_value: 0
+  - name: UnitOfMeasureForMaximumPackingLengthwidthheight_MARA_MAXDIM_UOM
+    tests:
+    - accepted_values:
+        values:
+        - ''
+        quote: true
+    - dbt_expectations.expect_column_value_lengths_to_equal:
+        value: 0
+        row_condition: '`UnitOfMeasureForMaximumPackingLengthwidthheight_MARA_MAXDIM_UOM`
+          is not null'
+  - name: CountryOfOriginOfMaterial_MARA_HERKL
+    tests:
+    - accepted_values:
+        values:
+        - ''
+        quote: true
+    - dbt_expectations.expect_column_value_lengths_to_equal:
+        value: 0
+        row_condition: '`CountryOfOriginOfMaterial_MARA_HERKL` is not null'
+  - name: MaterialFreightGroup_MARA_MFRGR
+    tests:
+    - accepted_values:
+        values:
+        - ''
+        quote: true
+    - dbt_expectations.expect_column_value_lengths_to_equal:
+        value: 0
+        row_condition: '`MaterialFreightGroup_MARA_MFRGR` is not null'
+  - name: QuarantinePeriod_MARA_QQTIME
+    tests:
+    - accepted_values:
+        values:
+        - '0'
+        quote: false
+    - dbt_utils.accepted_range:
+        min_value: 0
+        max_value: 0
+  - name: TimeUnitForQuarantinePeriod_MARA_QQTIMEUOM
+    tests:
+    - accepted_values:
+        values:
+        - ''
+        quote: true
+    - dbt_expectations.expect_column_value_lengths_to_equal:
+        value: 0
+        row_condition: '`TimeUnitForQuarantinePeriod_MARA_QQTIMEUOM` is not null'
+  - name: QualityInspectionGroup_MARA_QGRP
+    tests:
+    - accepted_values:
+        values:
+        - ''
+        quote: true
+    - dbt_expectations.expect_column_value_lengths_to_equal:
+        value: 0
+        row_condition: '`QualityInspectionGroup_MARA_QGRP` is not null'
+  - name: SerialNumberProfile_MARA_SERIAL
+    tests:
+    - accepted_values:
+        values:
+        - ''
+        quote: true
+    - dbt_expectations.expect_column_value_lengths_to_equal:
+        value: 0
+        row_condition: '`SerialNumberProfile_MARA_SERIAL` is not null'
+  - name: FormName_PS_SMARTFORM
+    tests:
+    - accepted_values:
+        values:
+        - ''
+        quote: true
+    - dbt_expectations.expect_column_value_lengths_to_equal:
+        value: 0
+        row_condition: '`FormName_PS_SMARTFORM` is not null'
+  - name: EwmCw_LogisticsUnitOfMeasure_MARA_LOGUNIT
+    tests:
+    - accepted_values:
+        values:
+        - ''
+        quote: true
+    - dbt_expectations.expect_column_value_lengths_to_equal:
+        value: 0
+        row_condition: '`EwmCw_LogisticsUnitOfMeasure_MARA_LOGUNIT` is not null'
+  - name: EwmCw_MaterialIsACatchWeightMaterial_MARA_CWQREL
+    tests:
+    - accepted_values:
+        values:
+        - ''
+        quote: true
+    - dbt_expectations.expect_column_value_lengths_to_equal:
+        value: 0
+        row_condition: '`EwmCw_MaterialIsACatchWeightMaterial_MARA_CWQREL` is not
+          null'
+  - name: EwmCw_CatchWeightProfileForEnteringCwQuantity_MARA_CWQPROC
+    tests:
+    - accepted_values:
+        values:
+        - ''
+        quote: true
+    - dbt_expectations.expect_column_value_lengths_to_equal:
+        value: 0
+        row_condition: '`EwmCw_CatchWeightProfileForEnteringCwQuantity_MARA_CWQPROC`
+          is not null'
+  - name: EwmCatchWeightToleranceGroupForEwm_MARA_CWQTOLGR
+    tests:
+    - accepted_values:
+        values:
+        - ''
+        quote: true
+    - dbt_expectations.expect_column_value_lengths_to_equal:
+        value: 0
+        row_condition: '`EwmCatchWeightToleranceGroupForEwm_MARA_CWQTOLGR` is not
+          null'
+  - name: AdjustmentProfile_MARA_ADPROF
+    tests:
+    - accepted_values:
+        values:
+        - ''
+        quote: true
+    - dbt_expectations.expect_column_value_lengths_to_equal:
+        value: 0
+        row_condition: '`AdjustmentProfile_MARA_ADPROF` is not null'
+  - name: IdForAnIntellectualProperty_CrmProduct_MARA_IPMIPPRODUCT
+    tests:
+    - accepted_values:
+        values:
+        - ''
+        quote: true
+    - dbt_expectations.expect_column_value_lengths_to_equal:
+        value: 0
+        row_condition: '`IdForAnIntellectualProperty_CrmProduct_MARA_IPMIPPRODUCT`
+          is not null'
+  - name: VariantPriceAllowed_ForMaterialMaster_MARA_ALLOW_PMAT_IGNO
+    tests:
+    - accepted_values:
+        values:
+        - ''
+        quote: true
+    - dbt_expectations.expect_column_value_lengths_to_equal:
+        value: 0
+        row_condition: '`VariantPriceAllowed_ForMaterialMaster_MARA_ALLOW_PMAT_IGNO`
+          is not null'
+  - name: Medium_MARA_MEDIUM
+    tests:
+    - accepted_values:
+        values:
+        - ''
+        quote: true
+    - dbt_expectations.expect_column_value_lengths_to_equal:
+        value: 0
+        row_condition: '`Medium_MARA_MEDIUM` is not null'
+  - name: PhysicalCommodity_MARA_COMMODITY
+    tests:
+    - accepted_values:
+        values:
+        - ''
+        quote: true
+    - dbt_expectations.expect_column_value_lengths_to_equal:
+        value: 0
+        row_condition: '`PhysicalCommodity_MARA_COMMODITY` is not null'
+  - name: MARA_Brand_BRAND_ID
+    tests:
+    - accepted_values:
+        values:
+        - ''
+        quote: true
+    - dbt_expectations.expect_column_value_lengths_to_equal:
+        value: 0
+        row_condition: '`MARA_Brand_BRAND_ID` is not null'
+  - name: ProcurementType_MARC_BESKZ
+    tests:
+    - accepted_values:
+        values:
+        - ''
+        - E
+        - F
+        - X
+        quote: true
+    - dbt_expectations.expect_column_value_lengths_to_be_between:
+        min_value: 0
+        max_value: 1
+        row_condition: '`ProcurementType_MARC_BESKZ` is not null'
+  - name: Indicator_APOA_MARC_KAUTB
+    tests:
+    - accepted_values:
+        values:
+        - ''
+        - X
+        quote: true
+    - dbt_expectations.expect_column_value_lengths_to_be_between:
+        min_value: 0
+        max_value: 1
+        row_condition: '`Indicator_APOA_MARC_KAUTB` is not null'
+  - name: Checking_Group_Availability_Check_MARC_MTVFP
+    tests:
+    - accepted_values:
+        values:
+        - ''
+        - '02'
+        - KP
+        - Z1
+        - Z7
+        quote: true
+    - dbt_expectations.expect_column_value_lengths_to_be_between:
+        min_value: 0
+        max_value: 2
+        row_condition: '`Checking_Group_Availability_Check_MARC_MTVFP` is not null'
+  - name: Component_scrap_percent_MARC_KAUSF
+    tests:
+    - accepted_values:
+        values:
+        - '0'
+        - '10'
+        - '5'
+        quote: false
+    - dbt_utils.accepted_range:
+        min_value: 0
+        max_value: 10
+  - name: MARC_SBDKZ
+    tests:
+    - accepted_values:
+        values:
+        - ''
+        - '1'
+        - '2'
+        quote: true
+    - dbt_expectations.expect_column_value_lengths_to_be_between:
+        min_value: 0
+        max_value: 1
+        row_condition: '`MARC_SBDKZ` is not null'
+  - name: MARC_PERIV
+    tests:
+    - accepted_values:
+        values:
+        - ''
+        - Z9
+        quote: true
+    - dbt_expectations.expect_column_value_lengths_to_be_between:
+        min_value: 0
+        max_value: 2
+        row_condition: '`MARC_PERIV` is not null'
+  - name: MARC_SAUFT
+    tests:
+    - accepted_values:
+        values:
+        - ''
+        - X
+        quote: true
+    - dbt_expectations.expect_column_value_lengths_to_be_between:
+        min_value: 0
+        max_value: 1
+        row_condition: '`MARC_SAUFT` is not null'
+  - name: MARC_RGEKZ
+    tests:
+    - accepted_values:
+        values:
+        - ''
+        - '1'
+        - '2'
+        quote: true
+    - dbt_expectations.expect_column_value_lengths_to_be_between:
+        min_value: 0
+        max_value: 1
+        row_condition: '`MARC_RGEKZ` is not null'
+  - name: MARC_SCHGT
+    tests:
+    - accepted_values:
+        values:
+        - ''
+        - X
+        quote: true
+    - dbt_expectations.expect_column_value_lengths_to_be_between:
+        min_value: 0
+        max_value: 1
+        row_condition: '`MARC_SCHGT` is not null'
+  - name: MARC_DIBER
+    tests:
+    - accepted_values:
+        values:
+        - ''
+        quote: true
+    - dbt_expectations.expect_column_value_lengths_to_equal:
+        value: 0
+        row_condition: '`MARC_DIBER` is not null'
+  - name: MARC_UEETK
+    tests:
+    - accepted_values:
+        values:
+        - ''
+        - X
+        quote: true
+    - dbt_expectations.expect_column_value_lengths_to_be_between:
+        min_value: 0
+        max_value: 1
+        row_condition: '`MARC_UEETK` is not null'
+  - name: MARC_ALTSL
+    tests:
+    - accepted_values:
+        values:
+        - ''
+        - '2'
+        - '3'
+        quote: true
+    - dbt_expectations.expect_column_value_lengths_to_be_between:
+        min_value: 0
+        max_value: 1
+        row_condition: '`MARC_ALTSL` is not null'
+  - name: MARC_MISKZ
+    tests:
+    - accepted_values:
+        values:
+        - ''
+        - '1'
+        - '2'
+        quote: true
+    - dbt_expectations.expect_column_value_lengths_to_be_between:
+        min_value: 0
+        max_value: 1
+        row_condition: '`MARC_MISKZ` is not null'
+  - name: MARC_DISGR
+    tests:
+    - accepted_values:
+        values:
+        - ''
+        - '1925'
+        quote: true
+    - dbt_expectations.expect_column_value_lengths_to_be_between:
+        min_value: 0
+        max_value: 4
+        row_condition: '`MARC_DISGR` is not null'
+  - name: MARC_SHPRO
+    tests:
+    - accepted_values:
+        values:
+        - ''
+        quote: true
+    - dbt_expectations.expect_column_value_lengths_to_equal:
+        value: 0
+        row_condition: '`MARC_SHPRO` is not null'
+  - name: MARC_PERKZ
+    tests:
+    - accepted_values:
+        values:
+        - M
+        - P
+        quote: true
+    - dbt_expectations.expect_column_value_lengths_to_equal:
+        value: 1
+        row_condition: '`MARC_PERKZ` is not null'
+  - name: MARC_UEETO
+    tests:
+    - accepted_values:
+        values:
+        - '0'
+        quote: false
+    - dbt_utils.accepted_range:
+        min_value: 0
+        max_value: 0
+  - name: MARC_LFRHY
+    tests:
+    - accepted_values:
+        values:
+        - ''
+        quote: true
+    - dbt_expectations.expect_column_value_lengths_to_equal:
+        value: 0
+        row_condition: '`MARC_LFRHY` is not null'
+  - name: MARC_EPRIO
+    tests:
+    - accepted_values:
+        values:
+        - ''
+        - Z001
+        quote: true
+    - dbt_expectations.expect_column_value_lengths_to_be_between:
+        min_value: 0
+        max_value: 4
+        row_condition: '`MARC_EPRIO` is not null'
+  - name: MARC_UNETO
+    tests:
+    - accepted_values:
+        values:
+        - '0'
+        quote: false
+    - dbt_utils.accepted_range:
+        min_value: 0
+        max_value: 0
+  - name: MARC_VERKZ
+    tests:
+    - accepted_values:
+        values:
+        - ''
+        - X
+        quote: true
+    - dbt_expectations.expect_column_value_lengths_to_be_between:
+        min_value: 0
+        max_value: 1
+        row_condition: '`MARC_VERKZ` is not null'
+  - name: MARC_ABCIN
+    tests:
+    - accepted_values:
+        values:
+        - ''
+        - A
+        - B
+        - C
+        - E
+        quote: true
+    - dbt_expectations.expect_column_value_lengths_to_be_between:
+        min_value: 0
+        max_value: 1
+        row_condition: '`MARC_ABCIN` is not null'
+  - name: MARC_INSMK
+    tests:
+    - accepted_values:
+        values:
+        - ''
+        quote: true
+    - dbt_expectations.expect_column_value_lengths_to_equal:
+        value: 0
+        row_condition: '`MARC_INSMK` is not null'
+  - name: MARC_QMATV
+    tests:
+    - accepted_values:
+        values:
+        - ''
+        - X
+        quote: true
+    - dbt_expectations.expect_column_value_lengths_to_be_between:
+        min_value: 0
+        max_value: 1
+        row_condition: '`MARC_QMATV` is not null'
+  - name: MARC_ZZMAX_STOCK
+    tests:
+    - accepted_values:
+        values:
+        - ''
+        - '0'
+        - '1.125'
+        quote: true
+    - dbt_expectations.expect_column_value_lengths_to_be_between:
+        min_value: 0
+        max_value: 7
+        row_condition: '`MARC_ZZMAX_STOCK` is not null'
+  - name: MARC_ZZMES_RELVT
+    tests:
+    - accepted_values:
+        values:
+        - ''
+        quote: true
+    - dbt_expectations.expect_column_value_lengths_to_equal:
+        value: 0
+        row_condition: '`MARC_ZZMES_RELVT` is not null'
+  - name: MARC_SFCPF
+    tests:
+    - accepted_values:
+        values:
+        - ''
+        - '000002'
+        - ZPI01
+        quote: true
+    - dbt_expectations.expect_column_value_lengths_to_be_between:
+        min_value: 0
+        max_value: 6
+        row_condition: '`MARC_SFCPF` is not null'
+  - name: MARC_FRTME
+    tests:
+    - accepted_values:
+        values:
+        - ''
+        - KG
+        - M
+        quote: true
+    - dbt_expectations.expect_column_value_lengths_to_be_between:
+        min_value: 0
+        max_value: 1
+        row_condition: '`MARC_FRTME` is not null'
+  - name: MARC_AWSLS
+    tests:
+    - accepted_values:
+        values:
+        - ''
+        - ZP1
+        quote: true
+    - dbt_expectations.expect_column_value_lengths_to_be_between:
+        min_value: 0
+        max_value: 3
+        row_condition: '`MARC_AWSLS` is not null'
+  - name: MARC_UCHKZ
+    tests:
+    - accepted_values:
+        values:
+        - ''
+        - '1'
+        quote: true
+    - dbt_expectations.expect_column_value_lengths_to_be_between:
+        min_value: 0
+        max_value: 1
+        row_condition: '`MARC_UCHKZ` is not null'
+  - name: MARC_ZZFRCST_FLAG
+    tests:
+    - accepted_values:
+        values:
+        - ''
+        - Y
+        quote: true
+    - dbt_expectations.expect_column_value_lengths_to_be_between:
+        min_value: 0
+        max_value: 1
+        row_condition: '`MARC_ZZFRCST_FLAG` is not null'
+  - name: MARC_ZZCRIT_MAT
+    tests:
+    - accepted_values:
+        values:
+        - ''
+        quote: true
+    - dbt_expectations.expect_column_value_lengths_to_equal:
+        value: 0
+        row_condition: '`MARC_ZZCRIT_MAT` is not null'
+  - name: MARC_VSPVB
+    tests:
+    - accepted_values:
+        values:
+        - ''
+        - '0000000001'
+        - '0000000002'
+        - '0000000003'
+        quote: true
+    - dbt_expectations.expect_column_value_lengths_to_be_between:
+        min_value: 0
+        max_value: 10
+        row_condition: '`MARC_VSPVB` is not null'
+  - name: MARC_AUSME
+    tests:
+    - accepted_values:
+        values:
+        - ''
+        - DEA
+        - G
+        - KG
+        - M
+        quote: true
+    - dbt_expectations.expect_column_value_lengths_to_be_between:
+        min_value: 0
+        max_value: 3
+        row_condition: '`MARC_AUSME` is not null'
+  - name: MARC_LZEIH
+    tests:
+    - accepted_values:
+        values:
+        - ''
+        - '10'
+        - JHR
+        - MON
+        quote: true
+    - dbt_expectations.expect_column_value_lengths_to_be_between:
+        min_value: 0
+        max_value: 3
+        row_condition: '`MARC_LZEIH` is not null'
+  - name: MARC_STLAN
+    tests:
+    - accepted_values:
+        values:
+        - ''
+        - '1'
+        - '3'
+        quote: true
+    - dbt_expectations.expect_column_value_lengths_to_be_between:
+        min_value: 0
+        max_value: 1
+        row_condition: '`MARC_STLAN` is not null'
+  - name: MARC_FVIDK
+    tests:
+    - accepted_values:
+        values:
+        - ''
+        - '999'
+        - IBP
+        quote: true
+    - dbt_expectations.expect_column_value_lengths_to_be_between:
+        min_value: 0
+        max_value: 3
+        row_condition: '`MARC_FVIDK` is not null'
+  - name: MARC_SFEPR
+    tests:
+    - accepted_values:
+        values:
+        - ''
+        - Z004
+        quote: true
+    - dbt_expectations.expect_column_value_lengths_to_be_between:
+        min_value: 0
+        max_value: 4
+        row_condition: '`MARC_SFEPR` is not null'
+  - name: MARC_AUTRU
+    tests:
+    - accepted_values:
+        values:
+        - ''
+        - X
+        quote: true
+    - dbt_expectations.expect_column_value_lengths_to_be_between:
+        min_value: 0
+        max_value: 1
+        row_condition: '`MARC_AUTRU` is not null'
+  - name: MARC_SHFLG
+    tests:
+    - accepted_values:
+        values:
+        - ''
+        - '1'
+        - '2'
+        quote: true
+    - dbt_expectations.expect_column_value_lengths_to_be_between:
+        min_value: 0
+        max_value: 1
+        row_condition: '`MARC_SHFLG` is not null'
+  - name: MARC_ZZFERTH_COS
+    tests:
+    - accepted_values:
+        values:
+        - ''
+        - DR-39
+        - DR-88
+        - IM
+        quote: true
+    - dbt_expectations.expect_column_value_lengths_to_be_between:
+        min_value: 0
+        max_value: 2
+        row_condition: '`MARC_ZZFERTH_COS` is not null'
+  - name: MARC_ZZFERTH_YNZ
+    tests:
+    - accepted_values:
+        values:
+        - ''
+        quote: true
+    - dbt_expectations.expect_column_value_lengths_to_equal:
+        value: 0
+        row_condition: '`MARC_ZZFERTH_YNZ` is not null'
+  - name: MARC_ZZFERTH_KOR
+    tests:
+    - accepted_values:
+        values:
+        - ''
+        quote: true
+    - dbt_expectations.expect_column_value_lengths_to_equal:
+        value: 0
+        row_condition: '`MARC_ZZFERTH_KOR` is not null'
+  - name: MARC_VRMOD
+    tests:
+    - accepted_values:
+        values:
+        - ''
+        - '2'
+        quote: true
+    - dbt_expectations.expect_column_value_lengths_to_be_between:
+        min_value: 0
+        max_value: 1
+        row_condition: '`MARC_VRMOD` is not null'
+  - name: KZECH
+    tests:
+    - accepted_values:
+        values:
+        - ''
+        - '1'
+        - '3'
+        quote: true
+    - dbt_expectations.expect_column_value_lengths_to_be_between:
+        min_value: 0
+        max_value: 1
+        row_condition: '`KZECH` is not null'
+  - name: MARC_ZZSTOCK_IND
+    tests:
+    - accepted_values:
+        values:
+        - ''
+        - N
+        quote: true
+    - dbt_expectations.expect_column_value_lengths_to_be_between:
+        min_value: 0
+        max_value: 1
+        row_condition: '`MARC_ZZSTOCK_IND` is not null'
+  - name: MARC_ZZMIN_TIP
+    tests:
+    - accepted_values:
+        values:
+        - ''
+        quote: true
+    - dbt_expectations.expect_column_value_lengths_to_equal:
+        value: 0
+        row_condition: '`MARC_ZZMIN_TIP` is not null'
+  - name: MARC_ZZMAX_TIP
+    tests:
+    - accepted_values:
+        values:
+        - ''
+        quote: true
+    - dbt_expectations.expect_column_value_lengths_to_equal:
+        value: 0
+        row_condition: '`MARC_ZZMAX_TIP` is not null'
+  - name: MARC_ZZINC_STOCK
+    tests:
+    - accepted_values:
+        values:
+        - ''
+        - '0'
+        quote: true
+    - dbt_expectations.expect_column_value_lengths_to_be_between:
+        min_value: 0
+        max_value: 2
+        row_condition: '`MARC_ZZINC_STOCK` is not null'
+  - name: MARA_Language_SPRAS
+    tests:
+    - accepted_values:
+        values:
+        - E
+        quote: true
+    - dbt_expectations.expect_column_value_lengths_to_equal:
+        value: 1
+        row_condition: '`MARA_Language_SPRAS` is not null'
+  - name: Material_statistics_group_MVKE_VERSG
+    tests:
+    - accepted_values:
+        values:
+        - ''
+        - '1'
+        quote: true
+    - dbt_expectations.expect_column_value_lengths_to_be_between:
+        min_value: 0
+        max_value: 1
+        row_condition: '`Material_statistics_group_MVKE_VERSG` is not null'
+  - name: ID_for_product_attribute3_MVKE_PRAT3
+    tests:
+    - accepted_values:
+        values:
+        - ''
+        - X
+        quote: true
+    - dbt_expectations.expect_column_value_lengths_to_be_between:
+        min_value: 0
+        max_value: 1
+        row_condition: '`ID_for_product_attribute3_MVKE_PRAT3` is not null'
+  - name: Assembly_scrap_in_percent_MDMA_AUSSS
+    tests:
+    - accepted_values:
+        values:
+        - '0'
+        quote: false
+    - dbt_utils.accepted_range:
+        min_value: 0
+        max_value: 0
+  - name: Default_storage_location_for_external_procurement_MDMA_LGFSB
+    tests:
+    - accepted_values:
+        values:
+        - ''
+        quote: true
+    - dbt_expectations.expect_column_value_lengths_to_equal:
+        value: 0
+        row_condition: '`Default_storage_location_for_external_procurement_MDMA_LGFSB`
+          is not null'
+  - name: Fixed_lot_size_MDMA_BSTFE
+    tests:
+    - accepted_values:
+        values:
+        - '0'
+        quote: false
+    - dbt_utils.accepted_range:
+        min_value: 0
+        max_value: 0
+  - name: Issue_Storage_Location_MDMA_LGPRO
+    tests:
+    - accepted_values:
+        values:
+        - ME01
+        - ME02
+        quote: true
+    - dbt_expectations.expect_column_value_lengths_to_equal:
+        value: 0
+        row_condition: '`Issue_Storage_Location_MDMA_LGPRO` is not null'
+  - name: Lot_size_MDMA_DISLS
+    tests:
+    - accepted_values:
+        values:
+        - EX
+        quote: true
+    - dbt_expectations.expect_column_value_lengths_to_equal:
+        value: 2
+        row_condition: '`Lot_size_MDMA_DISLS` is not null'
+  - name: Maximum_Lot_Size_MDMA_BSTMA
+    tests:
+    - accepted_values:
+        values:
+        - '0'
+        quote: false
+    - dbt_utils.accepted_range:
+        min_value: 0
+        max_value: 0
+  - name: Minimum_Lot_Size_MDMA_BSTMI
+    tests:
+    - accepted_values:
+        values:
+        - '0'
+        quote: false
+    - dbt_utils.accepted_range:
+        min_value: 0
+        max_value: 0
+  - name: MRP_Area_MDMA_BERID
+    tests:
+    - accepted_values:
+        values:
+        - 1920ME02
+        - VN136454
+        quote: true
+    - dbt_expectations.expect_column_value_lengths_to_equal:
+        value: 8
+        row_condition: '`MRP_Area_MDMA_BERID` is not null'
+  - name: MRP_Group_MDMA_DISGRP
+    tests:
+    - accepted_values:
+        values:
+        - ''
+        quote: true
+    - dbt_expectations.expect_column_value_lengths_to_equal:
+        value: 0
+        row_condition: '`MRP_Group_MDMA_DISGRP` is not null'
+  - name: MBEW_ZKPRS
+    tests:
+    - accepted_values:
+        values:
+        - '0'
+        quote: false
+    - dbt_utils.accepted_range:
+        min_value: 0
+        max_value: 0
+  - name: MBEW_ZKDAT
+    tests:
+    - accepted_values:
+        values:
+        - '0001-01-01'
+        - '2010-09-20'
+        - '2022-05-27'
+        - '2022-10-27'
+        quote: false
+  - name: MBEW_EKALR
+    tests:
+    - accepted_values:
+        values:
+        - ''
+        - X
+        quote: true
+    - dbt_expectations.expect_column_value_lengths_to_be_between:
+        min_value: 0
+        max_value: 1
+        row_condition: '`MBEW_EKALR` is not null'
+  - name: MBEW_VPRSV
+    tests:
+    - accepted_values:
+        values:
+        - S
+        quote: true
+    - dbt_expectations.expect_column_value_lengths_to_equal:
+        value: 1
+        row_condition: '`MBEW_VPRSV` is not null'
+  - name: MBEW_HKMAT
+    tests:
+    - accepted_values:
+        values:
+        - X
+        quote: true
+    - dbt_expectations.expect_column_value_lengths_to_be_between:
+        min_value: 0
+        max_value: 1
+        row_condition: '`MBEW_HKMAT` is not null'
+  - name: GrossWeight_MARA_BRGEW
+    tests:
+    - dbt_utils.accepted_range:
+        min_value: 0
+        max_value: 59533
+  - name: NetWeight_MARA_NTGEW
+    tests:
+    - dbt_utils.accepted_range:
+        min_value: 0
+        max_value: 200000
+  - name: Volume_MARA_VOLUM
+    tests:
+    - dbt_utils.accepted_range:
+        min_value: 0
+        max_value: 737280
+  - name: Length_MARA_LAENG
+    tests:
+    - dbt_utils.accepted_range:
+        min_value: 0
+        max_value: 3010
+  - name: Width_MARA_BREIT
+    tests:
+    - dbt_utils.accepted_range:
+        min_value: 0
+        max_value: 3500
+  - name: Height_MARA_HOEHE
+    tests:
+    - dbt_utils.accepted_range:
+        min_value: 0
+        max_value: 1590
+  - name: MinimumRemainingShelfLife_MARA_MHDRZ
+    tests:
+    - dbt_utils.accepted_range:
+        min_value: 0
+        max_value: 540
+  - name: TotalShelfLife_MARA_MHDHB
+    tests:
+    - dbt_utils.accepted_range:
+        min_value: 0
+        max_value: 3650
+  - name: MARC_BSTFE
+    tests:
+    - dbt_utils.accepted_range:
+        min_value: 0
+        max_value: 209439
+  - name: MARC_WEBAZ
+    tests:
+    - dbt_utils.accepted_range:
+        min_value: 0
+        max_value: 36
+  - name: MARC_DZEIT
+    tests:
+    - dbt_utils.accepted_range:
+        min_value: 0
+        max_value: 555
+  - name: MARC_BSTMA
+    tests:
+    - dbt_utils.accepted_range:
+        min_value: 0
+        max_value: 195000
+  - name: MARC_BSTMI
+    tests:
+    - dbt_utils.accepted_range:
+        min_value: 0
+        max_value: 10140000
+  - name: MARC_EISLO
+    tests:
+    - dbt_utils.accepted_range:
+        min_value: 0
+        max_value: 6
+  - name: MARC_PLIFZ
+    tests:
+    - dbt_utils.accepted_range:
+        min_value: 0
+        max_value: 779
+  - name: MARC_WZEIT
+    tests:
+    - dbt_utils.accepted_range:
+        min_value: 0
+        max_value: 565
+  - name: MARC_LOSGR
+    tests:
+    - dbt_utils.accepted_range:
+        min_value: 0
+        max_value: 100000
+  - name: MARC_MINBE
+    tests:
+    - dbt_utils.accepted_range:
+        min_value: 0
+        max_value: 21000
+  - name: MARC_BSTRF
+    tests:
+    - dbt_utils.accepted_range:
+        min_value: 0
+        max_value: 24000
+  - name: MARC_EISBE
+    tests:
+    - dbt_utils.accepted_range:
+        min_value: 0
+        max_value: 157500
+  - name: Minimum_order_quantity_in_base_UOM_MVKE_AUMNG
+    tests:
+    - dbt_utils.accepted_range:
+        min_value: 0
+        max_value: 50000
+  - name: Delivery_unit_MVKE_SCMNG
+    tests:
+    - dbt_utils.accepted_range:
+        min_value: 0
+        max_value: 1600
+  - name: MBEW_PEINH
+    tests:
+    - dbt_utils.accepted_range:
+        min_value: 1
+        max_value: 10000
+  - name: MBEW_STPRS
+    tests:
+    - dbt_utils.accepted_range:
+        min_value: 0
+        max_value: 1644150
+  - name: MBEW_VPLPR
+    tests:
+    - dbt_utils.accepted_range:
+        min_value: 0
+        max_value: 2471681.88
+  - name: MBEW_ZPLP1
+    tests:
+    - dbt_utils.accepted_range:
+        min_value: 0
+        max_value: 678467.04
+  - name: MBEW_ZPLP3
+    tests:
+    - dbt_utils.accepted_range:
+        min_value: 0
+        max_value: 47414
+  - name: MBEW_VERPR
+    tests:
+    - dbt_utils.accepted_range:
+        min_value: 0
+        max_value: 2405066.67
+  - name: MBEW_ZPLP2
+    tests:
+    - dbt_utils.accepted_range:
+        min_value: 0
+        max_value: 905173
+  - name: MaterialNumber_MARA_MATNR
+    tests:
+    - dbt_expectations.expect_column_value_lengths_to_be_between:
+        min_value: 2
+        max_value: 18
+        row_condition: '`MaterialNumber_MARA_MATNR` is not null'
+  - name: NameOfPersonWhoCreatedTheObject_MARA_ERNAM
+    tests:
+    - dbt_expectations.expect_column_value_lengths_to_be_between:
+        min_value: 3
+        max_value: 11
+        row_condition: '`NameOfPersonWhoCreatedTheObject_MARA_ERNAM` is not null'
+  - name: NameOfPersonWhoChangedObject_MARA_AENAM
+    tests:
+    - dbt_expectations.expect_column_value_lengths_to_be_between:
+        min_value: 0
+        max_value: 11
+        row_condition: '`NameOfPersonWhoChangedObject_MARA_AENAM` is not null'
+  - name: MaintenanceStatusOfCompleteMaterial_MARA_VPSTA
+    tests:
+    - dbt_expectations.expect_column_value_lengths_to_be_between:
+        min_value: 1
+        max_value: 15
+        row_condition: '`MaintenanceStatusOfCompleteMaterial_MARA_VPSTA` is not null'
+  - name: MaintenanceStatus_MARA_PSTAT
+    tests:
+    - dbt_expectations.expect_column_value_lengths_to_be_between:
+        min_value: 1
+        max_value: 13
+        row_condition: '`MaintenanceStatus_MARA_PSTAT` is not null'
+  - name: MaterialType_MARA_MTART
+    tests:
+    - dbt_expectations.expect_column_value_lengths_to_equal:
+        value: 4
+        row_condition: '`MaterialType_MARA_MTART` is not null'
+  - name: MaterialGroup_MARA_MATKL
+    tests:
+    - dbt_expectations.expect_column_value_lengths_to_be_between:
+        min_value: 0
+        max_value: 8
+        row_condition: '`MaterialGroup_MARA_MATKL` is not null'
+  - name: OldMaterialNumber_MARA_ZZBISMT
+    tests:
+    - dbt_expectations.expect_column_value_lengths_to_be_between:
+        min_value: 0
+        max_value: 25
+        row_condition: '`OldMaterialNumber_MARA_ZZBISMT` is not null'
+  - name: Extended_Material_Number_MARA_ZZNTEMN
+    tests:
+    - dbt_expectations.expect_column_value_lengths_to_be_between:
+        min_value: 0
+        max_value: 29
+        row_condition: '`Extended_Material_Number_MARA_ZZNTEMN` is not null'
+  - name: Serial_number_identifier_MARA_ZZMATN1
+    tests:
+    - dbt_expectations.expect_column_value_lengths_to_be_between:
+        min_value: 0
+        max_value: 8
+        row_condition: '`Serial_number_identifier_MARA_ZZMATN1` is not null'
+  - name: Extended_chemical_description_MARA_ZZCHEMMAKT
+    tests:
+    - dbt_expectations.expect_column_value_lengths_to_be_between:
+        min_value: 0
+        max_value: 132
+        row_condition: '`Extended_chemical_description_MARA_ZZCHEMMAKT` is not null'
+  - name: Extended_CMP_Internal_Description_ZZCMPINTRMAKT
+    tests:
+    - dbt_expectations.expect_column_value_lengths_to_be_between:
+        min_value: 0
+        max_value: 77
+        row_condition: '`Extended_CMP_Internal_Description_ZZCMPINTRMAKT` is not null'
+  - name: Marketing_required_service_level_MARA_ZZMKTSL
+    tests:
+    - dbt_expectations.expect_column_value_lengths_to_be_between:
+        min_value: 0
+        max_value: 3
+        row_condition: '`Marketing_required_service_level_MARA_ZZMKTSL` is not null'
+  - name: Product_tier_MARA_ZZPRDTIER
+    tests:
+    - dbt_expectations.expect_column_value_lengths_to_be_between:
+        min_value: 0
+        max_value: 4
+        row_condition: '`Product_tier_MARA_ZZPRDTIER` is not null'
+  - name: IBP_Relevant_MARA_ZZIBP_REL
+    tests:
+    - dbt_expectations.expect_column_value_lengths_to_be_between:
+        min_value: 0
+        max_value: 2
+        row_condition: '`IBP_Relevant_MARA_ZZIBP_REL` is not null'
+  - name: BaseUnitOfMeasure_MARA_MEINS
+    tests:
+    - dbt_expectations.expect_column_value_lengths_to_be_between:
+        min_value: 1
+        max_value: 3
+        row_condition: '`BaseUnitOfMeasure_MARA_MEINS` is not null'
+  - name: OrderUnit_MARA_BSTME
+    tests:
+    - dbt_expectations.expect_column_value_lengths_to_be_between:
+        min_value: 0
+        max_value: 3
+        row_condition: '`OrderUnit_MARA_BSTME` is not null'
+  - name: ProductioInspectionMemo_MARA_FERTH
+    tests:
+    - dbt_expectations.expect_column_value_lengths_to_be_between:
+        min_value: 0
+        max_value: 18
+        row_condition: '`ProductioInspectionMemo_MARA_FERTH` is not null'
+  - name: PageFormatOfProductionMemo_MARA_FORMT
+    tests:
+    - dbt_expectations.expect_column_value_lengths_to_be_between:
+        min_value: 0
+        max_value: 4
+        row_condition: '`PageFormatOfProductionMemo_MARA_FORMT` is not null'
+  - name: SizeDimensions_MARA_GROES
+    tests:
+    - dbt_expectations.expect_column_value_lengths_to_be_between:
+        min_value: 0
+        max_value: 32
+        row_condition: '`SizeDimensions_MARA_GROES` is not null'
+  - name: LaboratoryDesignOffice_MARA_LABOR
+    tests:
+    - dbt_expectations.expect_column_value_lengths_to_be_between:
+        min_value: 0
+        max_value: 3
+        row_condition: '`LaboratoryDesignOffice_MARA_LABOR` is not null'
+  - name: WeightUnit_MARA_GEWEI
+    tests:
+    - dbt_expectations.expect_column_value_lengths_to_be_between:
+        min_value: 0
+        max_value: 2
+        row_condition: '`WeightUnit_MARA_GEWEI` is not null'
+  - name: VolumeUnit_MARA_VOLEH
+    tests:
+    - dbt_expectations.expect_column_value_lengths_to_be_between:
+        min_value: 0
+        max_value: 3
+        row_condition: '`VolumeUnit_MARA_VOLEH` is not null'
+  - name: TemperatureConditionsIndicator_MARA_TEMPB
+    tests:
+    - dbt_expectations.expect_column_value_lengths_to_be_between:
+        min_value: 0
+        max_value: 2
+        row_condition: '`TemperatureConditionsIndicator_MARA_TEMPB` is not null'
+  - name: LowLevelCode_MARA_DISST
+    tests:
+    - dbt_expectations.expect_column_value_lengths_to_be_between:
+        min_value: 0
+        max_value: 3
+        row_condition: '`LowLevelCode_MARA_DISST` is not null'
+  - name: HazardousMaterialNumber_MARA_STOFF
+    tests:
+    - dbt_expectations.expect_column_value_lengths_to_be_between:
+        min_value: 0
+        max_value: 16
+        row_condition: '`HazardousMaterialNumber_MARA_STOFF` is not null'
+  - name: UnitOfDimensionForLengthwidthheight_MARA_MEABM
+    tests:
+    - dbt_expectations.expect_column_value_lengths_to_be_between:
+        min_value: 0
+        max_value: 2
+        row_condition: '`UnitOfDimensionForLengthwidthheight_MARA_MEABM` is not null'
+  - name: ProductHierarchy_MARA_PRDHA
+    tests:
+    - dbt_expectations.expect_column_value_lengths_to_be_between:
+        min_value: 0
+        max_value: 18
+        row_condition: '`ProductHierarchy_MARA_PRDHA` is not null'
+  - name: ExternalMaterialGroup_MARA_EXTWG
+    tests:
+    - dbt_expectations.expect_column_value_lengths_to_be_between:
+        min_value: 0
+        max_value: 6
+        row_condition: '`ExternalMaterialGroup_MARA_EXTWG` is not null'
+  - name: CrossPlantConfigurableMaterial_MARA_SATNR
+    tests:
+    - dbt_expectations.expect_column_value_lengths_to_be_between:
+        min_value: 0
+        max_value: 18
+        row_condition: '`CrossPlantConfigurableMaterial_MARA_SATNR` is not null'
+  - name: CrossPlantMaterialStatus_MARA_MSTAE
+    tests:
+    - dbt_expectations.expect_column_value_lengths_to_be_between:
+        min_value: 0
+        max_value: 2
+        row_condition: '`CrossPlantMaterialStatus_MARA_MSTAE` is not null'
+  - name: InternalObjectNumber_MARA_CUOBF
+    tests:
+    - dbt_expectations.expect_column_value_lengths_to_equal:
+        value: 18
+        row_condition: '`InternalObjectNumber_MARA_CUOBF` is not null'
+  - name: ManufacturerPartNumber_MARA_MFRPN
+    tests:
+    - dbt_expectations.expect_column_value_lengths_to_be_between:
+        min_value: 0
+        max_value: 24
+        row_condition: '`ManufacturerPartNumber_MARA_MFRPN` is not null'
+  - name: GeneralItemCategoryGroup_MTPOS_MARA
+    tests:
+    - dbt_expectations.expect_column_value_lengths_to_be_between:
+        min_value: 0
+        max_value: 4
+        row_condition: '`GeneralItemCategoryGroup_MTPOS_MARA` is not null'
+  - name: MRPType_MARC_DISMM
+    tests:
+    - dbt_expectations.expect_column_value_lengths_to_be_between:
+        min_value: 0
+        max_value: 2
+        row_condition: '`MRPType_MARC_DISMM` is not null'
+  - name: Plant_MARC_WERKS
+    tests:
+    - dbt_expectations.expect_column_value_lengths_to_equal:
+        value: 4
+        row_condition: '`Plant_MARC_WERKS` is not null'
+  - name: ProfitCenter_MARC_PRCTR
+    tests:
+    - dbt_expectations.expect_column_value_lengths_to_be_between:
+        min_value: 0
+        max_value: 10
+        row_condition: '`ProfitCenter_MARC_PRCTR` is not null'
+  - name: PurchGroup_MARC_EKGRP
+    tests:
+    - dbt_expectations.expect_column_value_lengths_to_be_between:
+        min_value: 0
+        max_value: 3
+        row_condition: '`PurchGroup_MARC_EKGRP` is not null'
+  - name: CommodityCode_MARC_STAWN
+    tests:
+    - dbt_expectations.expect_column_value_lengths_to_be_between:
+        min_value: 0
+        max_value: 13
+        row_condition: '`CommodityCode_MARC_STAWN` is not null'
+  - name: MRP_Controller_MARC_DISPO
+    tests:
+    - dbt_expectations.expect_column_value_lengths_to_be_between:
+        min_value: 0
+        max_value: 3
+        row_condition: '`MRP_Controller_MARC_DISPO` is not null'
+  - name: SpecProcType_MARC_SOBSL
+    tests:
+    - dbt_expectations.expect_column_value_lengths_to_be_between:
+        min_value: 0
+        max_value: 2
+        row_condition: '`SpecProcType_MARC_SOBSL` is not null'
+  - name: ABC_Indicator_MARC_MAABC
+    tests:
+    - dbt_expectations.expect_column_value_lengths_to_be_between:
+        min_value: 0
+        max_value: 1
+        row_condition: '`ABC_Indicator_MARC_MAABC` is not null'
+  - name: MARC_VINT1
+    tests:
+    - dbt_expectations.expect_column_value_lengths_to_equal:
+        value: 3
+        row_condition: '`MARC_VINT1` is not null'
+  - name: MARC_VINT2
+    tests:
+    - dbt_expectations.expect_column_value_lengths_to_equal:
+        value: 3
+        row_condition: '`MARC_VINT2` is not null'
+  - name: MARC_LGFSB
+    tests:
+    - dbt_expectations.expect_column_value_lengths_to_be_between:
+        min_value: 0
+        max_value: 4
+        row_condition: '`MARC_LGFSB` is not null'
+  - name: MARC_MATGR
+    tests:
+    - dbt_expectations.expect_column_value_lengths_to_be_between:
+        min_value: 0
+        max_value: 12
+        row_condition: '`MARC_MATGR` is not null'
+  - name: MARC_LGPRO
+    tests:
+    - dbt_expectations.expect_column_value_lengths_to_be_between:
+        min_value: 0
+        max_value: 4
+        row_condition: '`MARC_LGPRO` is not null'
+  - name: MARC_DISLS
+    tests:
+    - dbt_expectations.expect_column_value_lengths_to_be_between:
+        min_value: 0
+        max_value: 2
+        row_condition: '`MARC_DISLS` is not null'
+  - name: MARC_STRGR
+    tests:
+    - dbt_expectations.expect_column_value_lengths_to_be_between:
+        min_value: 0
+        max_value: 2
+        row_condition: '`MARC_STRGR` is not null'
+  - name: MARC_FXHOR
+    tests:
+    - dbt_expectations.expect_column_value_lengths_to_equal:
+        value: 3
+        row_condition: '`MARC_FXHOR` is not null'
+  - name: MARC_LADGR
+    tests:
+    - dbt_expectations.expect_column_value_lengths_to_be_between:
+        min_value: 0
+        max_value: 4
+        row_condition: '`MARC_LADGR` is not null'
+  - name: MARC_SSQSS
+    tests:
+    - dbt_expectations.expect_column_value_lengths_to_be_between:
+        min_value: 0
+        max_value: 8
+        row_condition: '`MARC_SSQSS` is not null'
+  - name: MARC_ZZMIN_STOCK
+    tests:
+    - dbt_expectations.expect_column_value_lengths_to_be_between:
+        min_value: 0
+        max_value: 5
+        row_condition: '`MARC_ZZMIN_STOCK` is not null'
+  - name: MARC_FEVOR
+    tests:
+    - dbt_expectations.expect_column_value_lengths_to_be_between:
+        min_value: 0
+        max_value: 3
+        row_condition: '`MARC_FEVOR` is not null'
+  - name: MARC_CASNR
+    tests:
+    - dbt_expectations.expect_column_value_lengths_to_be_between:
+        min_value: 0
+        max_value: 15
+        row_condition: '`MARC_CASNR` is not null'
+  - name: MARC_ZZFRCST_RORG
+    tests:
+    - dbt_expectations.expect_column_value_lengths_to_be_between:
+        min_value: 0
+        max_value: 3
+        row_condition: '`MARC_ZZFRCST_RORG` is not null'
+  - name: MARC_RWPRO
+    tests:
+    - dbt_expectations.expect_column_value_lengths_to_be_between:
+        min_value: 0
+        max_value: 3
+        row_condition: '`MARC_RWPRO` is not null'
+  - name: MARC_MMSTA
+    tests:
+    - dbt_expectations.expect_column_value_lengths_to_be_between:
+        min_value: 0
+        max_value: 2
+        row_condition: '`MARC_MMSTA` is not null'
+  - name: MARC_ZZFERTH_CHS
+    tests:
+    - dbt_expectations.expect_column_value_lengths_to_be_between:
+        min_value: 0
+        max_value: 18
+        row_condition: '`MARC_ZZFERTH_CHS` is not null'
+  - name: MARC_SHZET
+    tests:
+    - dbt_expectations.expect_column_value_lengths_to_equal:
+        value: 2
+        row_condition: '`MARC_SHZET` is not null'
+  - name: MARC_FHORI
+    tests:
+    - dbt_expectations.expect_column_value_lengths_to_be_between:
+        min_value: 0
+        max_value: 3
+        row_condition: '`MARC_FHORI` is not null'
+  - name: MARC_SERNP
+    tests:
+    - dbt_expectations.expect_column_value_lengths_to_be_between:
+        min_value: 0
+        max_value: 4
+        row_condition: '`MARC_SERNP` is not null'
+  - name: MARC_ZZFERTH_KUL
+    tests:
+    - dbt_expectations.expect_column_value_lengths_to_be_between:
+        min_value: 0
+        max_value: 17
+        row_condition: '`MARC_ZZFERTH_KUL` is not null'
+  - name: MARC_MAABC
+    tests:
+    - dbt_expectations.expect_column_value_lengths_to_be_between:
+        min_value: 0
+        max_value: 1
+        row_condition: '`MARC_MAABC` is not null'
+  - name: MARC_STDPD
+    tests:
+    - dbt_expectations.expect_column_value_lengths_to_be_between:
+        min_value: 0
+        max_value: 18
+        row_condition: '`MARC_STDPD` is not null'
+  - name: MARC_ZZSUPPRDFAMILY
+    tests:
+    - dbt_expectations.expect_column_value_lengths_to_be_between:
+        min_value: 0
+        max_value: 33
+        row_condition: '`MARC_ZZSUPPRDFAMILY` is not null'
+  - name: DChain_MVKE_VMSTA
+    tests:
+    - dbt_expectations.expect_column_value_lengths_to_be_between:
+        min_value: 0
+        max_value: 2
+        row_condition: '`DChain_MVKE_VMSTA` is not null'
+  - name: Item_category_group_from_material_master_MVKE_MTPOS
+    tests:
+    - dbt_expectations.expect_column_value_lengths_to_be_between:
+        min_value: 0
+        max_value: 4
+        row_condition: '`Item_category_group_from_material_master_MVKE_MTPOS` is not
+          null'
+  - name: Sales_unit_MVKE_VRKME
+    tests:
+    - dbt_expectations.expect_column_value_lengths_to_be_between:
+        min_value: 0
+        max_value: 3
+        row_condition: '`Sales_unit_MVKE_VRKME` is not null'
+  - name: Account_assignment_group_for_this_material_MVKE_KTGRM
+    tests:
+    - dbt_expectations.expect_column_value_lengths_to_be_between:
+        min_value: 0
+        max_value: 2
+        row_condition: '`Account_assignment_group_for_this_material_MVKE_KTGRM` is
+          not null'
+  - name: Delivering_plant_MVKE_DWERK
+    tests:
+    - dbt_expectations.expect_column_value_lengths_to_be_between:
+        min_value: 0
+        max_value: 4
+        row_condition: '`Delivering_plant_MVKE_DWERK` is not null'
+  - name: Volume_rebate_group_MVKE_BONUS
+    tests:
+    - dbt_expectations.expect_column_value_lengths_to_be_between:
+        min_value: 0
+        max_value: 2
+        row_condition: '`Volume_rebate_group_MVKE_BONUS` is not null'
+  - name: Material_Pricing_Group_MVKE_KONDM
+    tests:
+    - dbt_expectations.expect_column_value_lengths_to_be_between:
+        min_value: 0
+        max_value: 2
+        row_condition: '`Material_Pricing_Group_MVKE_KONDM` is not null'
+  - name: Material_group1_MVKE_MVGR1
+    tests:
+    - dbt_expectations.expect_column_value_lengths_to_be_between:
+        min_value: 0
+        max_value: 3
+        row_condition: '`Material_group1_MVKE_MVGR1` is not null'
+  - name: Material_group2_MVKE_MVGR2
+    tests:
+    - dbt_expectations.expect_column_value_lengths_to_be_between:
+        min_value: 0
+        max_value: 3
+        row_condition: '`Material_group2_MVKE_MVGR2` is not null'
+  - name: Material_group3_MVKE_MVGR3
+    tests:
+    - dbt_expectations.expect_column_value_lengths_to_be_between:
+        min_value: 0
+        max_value: 3
+        row_condition: '`Material_group3_MVKE_MVGR3` is not null'
+  - name: Material_group4_MVKE_MVGR4
+    tests:
+    - dbt_expectations.expect_column_value_lengths_to_be_between:
+        min_value: 0
+        max_value: 3
+        row_condition: '`Material_group4_MVKE_MVGR4` is not null'
+  - name: Material_group5_MVKE_MVGR5
+    tests:
+    - dbt_expectations.expect_column_value_lengths_to_be_between:
+        min_value: 0
+        max_value: 3
+        row_condition: '`Material_group5_MVKE_MVGR5` is not null'
+  - name: Distributionchainspecific_material_status_MVKE_VMSTA
+    tests:
+    - dbt_expectations.expect_column_value_lengths_to_be_between:
+        min_value: 0
+        max_value: 2
+        row_condition: '`Distributionchainspecific_material_status_MVKE_VMSTA` is
+          not null'
+  - name: Sales_org_T001W_VKORG
+    tests:
+    - dbt_expectations.expect_column_value_lengths_to_equal:
+        value: 4
+        row_condition: '`Sales_org_T001W_VKORG` is not null'
+  - name: MaterialDescription_MAKT_MAKTX
+    tests:
+    - dbt_expectations.expect_column_value_lengths_to_be_between:
+        min_value: 1
+        max_value: 40
+        row_condition: '`MaterialDescription_MAKT_MAKTX` is not null'
+  - name: MBEW_BKLAS
+    tests:
+    - dbt_expectations.expect_column_value_lengths_to_equal:
+        value: 4
+        row_condition: '`MBEW_BKLAS` is not null'
+  - name: MBEW_KOSGR
+    tests:
+    - dbt_expectations.expect_column_value_lengths_to_be_between:
+        min_value: 0
+        max_value: 9
+        row_condition: '`MBEW_KOSGR` is not null'
+  - name: Nodetype
+    tests:
+    - dbt_expectations.expect_column_value_lengths_to_equal:
+        value: 2
+        row_condition: '`Nodetype` is not null'
+
