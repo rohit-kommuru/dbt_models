@@ -1,0 +1,282 @@
+models:
+- name: model_batch
+  columns:
+  - name: name
+    tests:
+    - unique
+    - dbt_expectations.expect_column_value_lengths_to_be_between:
+        min_value: 11
+        max_value: 20
+        row_condition: '`name` is not null'
+  - name: object_class
+    tests:
+    - accepted_values:
+        values:
+        - TEST
+        quote: true
+    - dbt_expectations.expect_column_value_lengths_to_equal:
+        value: 4
+        row_condition: '`object_class` is not null'
+  - name: global_flag
+    tests:
+    - accepted_values:
+        values:
+        - T
+        quote: true
+    - dbt_expectations.expect_column_value_lengths_to_equal:
+        value: 1
+        row_condition: '`global_flag` is not null'
+  - name: batch_type
+    tests:
+    - accepted_values:
+        values:
+        - ''
+        - INST
+        - PREP
+        quote: true
+    - dbt_expectations.expect_column_value_lengths_to_be_between:
+        min_value: 0
+        max_value: 4
+        row_condition: '`batch_type` is not null'
+  - name: batch_status
+    tests:
+    - accepted_values:
+        values:
+        - ''
+        - FAIL
+        quote: true
+    - dbt_expectations.expect_column_value_lengths_to_be_between:
+        min_value: 0
+        max_value: 4
+        row_condition: '`batch_status` is not null'
+  - name: assign_to_objects
+    tests:
+    - accepted_values:
+        values:
+        - T
+        quote: true
+    - dbt_expectations.expect_column_value_lengths_to_equal:
+        value: 1
+        row_condition: '`assign_to_objects` is not null'
+  - name: analysis_link_field
+    tests:
+    - accepted_values:
+        values:
+        - ANALYSIS_TYPE
+        - BATCH_LINK
+        - NAME
+        quote: true
+    - dbt_expectations.expect_column_value_lengths_to_be_between:
+        min_value: 4
+        max_value: 13
+        row_condition: '`analysis_link_field` is not null'
+  - name: change_link_key
+    tests:
+    - accepted_values:
+        values:
+        - F
+        - T
+        quote: true
+    - dbt_expectations.expect_column_value_lengths_to_equal:
+        value: 1
+        row_condition: '`change_link_key` is not null'
+  - name: closed
+    tests:
+    - accepted_values:
+        values:
+        - F
+        - T
+        quote: true
+    - dbt_expectations.expect_column_value_lengths_to_equal:
+        value: 1
+        row_condition: '`closed` is not null'
+  - name: refresh_interval
+    tests:
+    - accepted_values:
+        values:
+        - '0'
+        quote: false
+    - dbt_utils.accepted_range:
+        min_value: 0
+        max_value: 0
+  - name: variation
+    tests:
+    - accepted_values:
+        values:
+        - ''
+        quote: true
+    - dbt_expectations.expect_column_value_lengths_to_equal:
+        value: 0
+        row_condition: '`variation` is not null'
+  - name: signed
+    tests:
+    - accepted_values:
+        values:
+        - F
+        quote: true
+    - dbt_expectations.expect_column_value_lengths_to_equal:
+        value: 1
+        row_condition: '`signed` is not null'
+  - name: investigated
+    tests:
+    - accepted_values:
+        values:
+        - F
+        quote: true
+    - dbt_expectations.expect_column_value_lengths_to_equal:
+        value: 1
+        row_condition: '`investigated` is not null'
+  - name: x_baseline_sample
+    tests:
+    - accepted_values:
+        values:
+        - '0'
+        quote: false
+    - dbt_utils.accepted_range:
+        min_value: 0
+        max_value: 0
+  - name: x_baseline_test
+    tests:
+    - accepted_values:
+        values:
+        - '0'
+        quote: false
+    - dbt_utils.accepted_range:
+        min_value: 0
+        max_value: 0
+  - name: x_quant_method
+    tests:
+    - accepted_values:
+        values:
+        - ''
+        - ANIONS
+        - ANIONS_IPA
+        - DOP_0200104TM
+        - SML_0100651TM
+        quote: true
+    - dbt_expectations.expect_column_value_lengths_to_be_between:
+        min_value: 0
+        max_value: 13
+        row_condition: '`x_quant_method` is not null'
+  - name: x_report_method
+    tests:
+    - accepted_values:
+        values:
+        - ''
+        - DOP_0200104TM
+        - LIMS_EXPORT
+        - LIMS_REPORT
+        - SML_0100651TM
+        quote: true
+    - dbt_expectations.expect_column_value_lengths_to_be_between:
+        min_value: 0
+        max_value: 13
+        row_condition: '`x_report_method` is not null'
+  - name: x_detection_method
+    tests:
+    - accepted_values:
+        values:
+        - ''
+        - Default
+        - SML_0100651TM
+        quote: true
+    - dbt_expectations.expect_column_value_lengths_to_be_between:
+        min_value: 0
+        max_value: 13
+        row_condition: '`x_detection_method` is not null'
+  - name: x_calc_on_prep
+    tests:
+    - accepted_values:
+        values:
+        - F
+        quote: true
+    - dbt_expectations.expect_column_value_lengths_to_equal:
+        value: 1
+        row_condition: '`x_calc_on_prep` is not null'
+  - name: x_batch_link
+    tests:
+    - accepted_values:
+        values:
+        - ''
+        quote: true
+    - dbt_expectations.expect_column_value_lengths_to_equal:
+        value: 0
+        row_condition: '`x_batch_link` is not null'
+  - name: template_version
+    tests:
+    - dbt_utils.accepted_range:
+        min_value: 1
+        max_value: 17
+  - name: description
+    tests:
+    - dbt_expectations.expect_column_value_lengths_to_be_between:
+        min_value: 0
+        max_value: 15
+        row_condition: '`description` is not null'
+  - name: ext_link
+    tests:
+    - dbt_expectations.expect_column_value_lengths_to_be_between:
+        min_value: 0
+        max_value: 145
+        row_condition: '`ext_link` is not null'
+  - name: group_name
+    tests:
+    - dbt_expectations.expect_column_value_lengths_to_be_between:
+        min_value: 6
+        max_value: 13
+        row_condition: '`group_name` is not null'
+  - name: template
+    tests:
+    - dbt_expectations.expect_column_value_lengths_to_be_between:
+        min_value: 7
+        max_value: 20
+        row_condition: '`template` is not null'
+  - name: note
+    tests:
+    - dbt_expectations.expect_column_value_lengths_to_be_between:
+        min_value: 0
+        max_value: 241
+        row_condition: '`note` is not null'
+  - name: changed_by
+    tests:
+    - dbt_expectations.expect_column_value_lengths_to_be_between:
+        min_value: 3
+        max_value: 12
+        row_condition: '`changed_by` is not null'
+  - name: created_by
+    tests:
+    - dbt_expectations.expect_column_value_lengths_to_be_between:
+        min_value: 3
+        max_value: 12
+        row_condition: '`created_by` is not null'
+  - name: batch_comment
+    tests:
+    - dbt_expectations.expect_column_value_lengths_to_be_between:
+        min_value: 0
+        max_value: 19
+        row_condition: '`batch_comment` is not null'
+  - name: owner
+    tests:
+    - dbt_expectations.expect_column_value_lengths_to_be_between:
+        min_value: 0
+        max_value: 12
+        row_condition: '`owner` is not null'
+  - name: instrument
+    tests:
+    - dbt_expectations.expect_column_value_lengths_to_be_between:
+        min_value: 0
+        max_value: 19
+        row_condition: '`instrument` is not null'
+  - name: analysis_link_key
+    tests:
+    - dbt_expectations.expect_column_value_lengths_to_be_between:
+        min_value: 6
+        max_value: 20
+        row_condition: '`analysis_link_key` is not null'
+  - name: x_instrument_method
+    tests:
+    - dbt_expectations.expect_column_value_lengths_to_be_between:
+        min_value: 0
+        max_value: 18
+        row_condition: '`x_instrument_method` is not null'
+

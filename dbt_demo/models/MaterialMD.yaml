@@ -15,11 +15,9 @@ models:
     - accepted_values:
         values:
         - ''
-        - X
         quote: true
-    - dbt_expectations.expect_column_value_lengths_to_be_between:
-        min_value: 0
-        max_value: 1
+    - dbt_expectations.expect_column_value_lengths_to_equal:
+        value: 0
         row_condition: '`FlagMaterialForDeletionAtClientLevel_MARA_LVORM` is not null'
   - name: IndustrySector_MARA_MBRSH
     tests:
@@ -324,8 +322,9 @@ models:
         - ''
         - X
         quote: true
-    - dbt_expectations.expect_column_value_lengths_to_equal:
-        value: 0
+    - dbt_expectations.expect_column_value_lengths_to_be_between:
+        min_value: 0
+        max_value: 1
         row_condition: '`BatchManagementRequirementIndicator_MARA_XCHPF` is not null'
   - name: PackagingMaterialType_MARA_VHART
     tests:
@@ -444,10 +443,9 @@ models:
     - accepted_values:
         values:
         - ''
-        - '35'
         - '39'
         - '40'
-        - LK
+        - '99'
         quote: true
     - dbt_expectations.expect_column_value_lengths_to_be_between:
         min_value: 0
@@ -569,9 +567,8 @@ models:
     - accepted_values:
         values:
         - ''
-        - '0000107441'
-        - 0000118516
-        - 0000127815
+        - 0000127809
+        - '0000146364'
         quote: true
     - dbt_expectations.expect_column_value_lengths_to_be_between:
         min_value: 0
@@ -640,6 +637,7 @@ models:
     - accepted_values:
         values:
         - ''
+        - X
         quote: true
     - dbt_expectations.expect_column_value_lengths_to_equal:
         value: 0
@@ -703,7 +701,6 @@ models:
         values:
         - D
         - M
-        - Y
         quote: true
     - dbt_expectations.expect_column_value_lengths_to_equal:
         value: 1
@@ -1133,16 +1130,31 @@ models:
         min_value: 0
         max_value: 1
         row_condition: '`Indicator_APOA_MARC_KAUTB` is not null'
+  - name: Checking_Group_Availability_Check_MARC_MTVFP
+    tests:
+    - accepted_values:
+        values:
+        - ''
+        - '02'
+        - KP
+        - Z1
+        - Z7
+        quote: true
+    - dbt_expectations.expect_column_value_lengths_to_be_between:
+        min_value: 0
+        max_value: 2
+        row_condition: '`Checking_Group_Availability_Check_MARC_MTVFP` is not null'
   - name: Component_scrap_percent_MARC_KAUSF
     tests:
     - accepted_values:
         values:
         - '0'
         - '10'
+        - '5'
         quote: false
     - dbt_utils.accepted_range:
         min_value: 0
-        max_value: 25
+        max_value: 10
   - name: MARC_SBDKZ
     tests:
     - accepted_values:
@@ -1206,8 +1218,9 @@ models:
         values:
         - ''
         quote: true
-    - dbt_expectations.expect_column_value_lengths_to_equal:
-        value: 0
+    - dbt_expectations.expect_column_value_lengths_to_be_between:
+        min_value: 0
+        max_value: 1
         row_condition: '`MARC_DIBER` is not null'
   - name: MARC_UEETK
     tests:
@@ -1331,6 +1344,7 @@ models:
         - A
         - B
         - C
+        - E
         quote: true
     - dbt_expectations.expect_column_value_lengths_to_be_between:
         min_value: 0
@@ -1347,20 +1361,6 @@ models:
         min_value: 0
         max_value: 1
         row_condition: '`MARC_INSMK` is not null'
-  - name: MARC_SSQSS
-    tests:
-    - accepted_values:
-        values:
-        - ''
-        - '0000'
-        - '0007'
-        - 0008
-        - ME000001
-        quote: true
-    - dbt_expectations.expect_column_value_lengths_to_be_between:
-        min_value: 0
-        max_value: 8
-        row_condition: '`MARC_SSQSS` is not null'
   - name: MARC_QMATV
     tests:
     - accepted_values:
@@ -1372,35 +1372,23 @@ models:
         min_value: 0
         max_value: 1
         row_condition: '`MARC_QMATV` is not null'
-  - name: MARC_ZZMAX_STOCK
-    tests:
-    - accepted_values:
-        values:
-        - ''
-        - '0'
-        - '25.256'
-        - '499.366'
-        - '52.976'
-        quote: true
-    - dbt_expectations.expect_column_value_lengths_to_be_between:
-        min_value: 0
-        max_value: 9
-        row_condition: '`MARC_ZZMAX_STOCK` is not null'
   - name: MARC_ZZMES_RELVT
     tests:
     - accepted_values:
         values:
         - ''
         quote: true
-    - dbt_expectations.expect_column_value_lengths_to_equal:
-        value: 0
+    - dbt_expectations.expect_column_value_lengths_to_be_between:
+        min_value: 0
+        max_value: 1
         row_condition: '`MARC_ZZMES_RELVT` is not null'
   - name: MARC_SFCPF
     tests:
     - accepted_values:
         values:
         - ''
-        - Z00001
+        - '000001'
+        - ZPI01
         quote: true
     - dbt_expectations.expect_column_value_lengths_to_be_between:
         min_value: 0
@@ -1411,7 +1399,7 @@ models:
     - accepted_values:
         values:
         - ''
-        - M
+        - KG
         - PAK
         quote: true
     - dbt_expectations.expect_column_value_lengths_to_be_between:
@@ -1434,6 +1422,7 @@ models:
     - accepted_values:
         values:
         - ''
+        - '1'
         quote: true
     - dbt_expectations.expect_column_value_lengths_to_be_between:
         min_value: 0
@@ -1454,10 +1443,10 @@ models:
     - accepted_values:
         values:
         - ''
+        - X
         quote: true
-    - dbt_expectations.expect_column_value_lengths_to_be_between:
-        min_value: 0
-        max_value: 1
+    - dbt_expectations.expect_column_value_lengths_to_equal:
+        value: 0
         row_condition: '`MARC_ZZCRIT_MAT` is not null'
   - name: MARC_VSPVB
     tests:
@@ -1467,18 +1456,31 @@ models:
         - '0000000001'
         - '0000000002'
         - '0000000003'
-        - CELL3
         quote: true
     - dbt_expectations.expect_column_value_lengths_to_be_between:
         min_value: 0
         max_value: 10
         row_condition: '`MARC_VSPVB` is not null'
+  - name: MARC_AUSME
+    tests:
+    - accepted_values:
+        values:
+        - ''
+        - DEA
+        - EA
+        - KG
+        - M
+        quote: true
+    - dbt_expectations.expect_column_value_lengths_to_be_between:
+        min_value: 0
+        max_value: 3
+        row_condition: '`MARC_AUSME` is not null'
   - name: MARC_LZEIH
     tests:
     - accepted_values:
         values:
         - ''
-        - '10'
+        - JHR
         - MON
         quote: true
     - dbt_expectations.expect_column_value_lengths_to_equal:
@@ -1502,6 +1504,7 @@ models:
         - ''
         - '999'
         - IBP
+        - S01
         quote: true
     - dbt_expectations.expect_column_value_lengths_to_be_between:
         min_value: 0
@@ -1546,7 +1549,6 @@ models:
     - accepted_values:
         values:
         - ''
-        - IM
         quote: true
     - dbt_expectations.expect_column_value_lengths_to_be_between:
         min_value: 0
@@ -1576,6 +1578,7 @@ models:
         values:
         - ''
         - '2'
+        - '3'
         quote: true
     - dbt_expectations.expect_column_value_lengths_to_be_between:
         min_value: 0
@@ -1599,7 +1602,6 @@ models:
         values:
         - ''
         - N
-        - S
         quote: true
     - dbt_expectations.expect_column_value_lengths_to_be_between:
         min_value: 0
@@ -1629,7 +1631,7 @@ models:
         values:
         - ''
         - '0'
-        - '21'
+        - '7'
         quote: true
     - dbt_expectations.expect_column_value_lengths_to_be_between:
         min_value: 0
@@ -1688,7 +1690,8 @@ models:
   - name: Fixed_lot_size_MDMA_BSTFE
     tests:
     - accepted_values:
-        values: []
+        values:
+        - '0'
         quote: false
     - dbt_utils.accepted_range:
         min_value: 0
@@ -1708,7 +1711,9 @@ models:
     tests:
     - accepted_values:
         values:
-        - WB
+        - W2
+        - W3
+        - W6
         quote: true
     - dbt_expectations.expect_column_value_lengths_to_equal:
         value: 2
@@ -1718,7 +1723,6 @@ models:
     - accepted_values:
         values:
         - '0'
-        - '2'
         quote: false
     - dbt_utils.accepted_range:
         min_value: 0
@@ -1737,7 +1741,6 @@ models:
     - accepted_values:
         values:
         - 1920ME01
-        - 1920ME02
         quote: true
     - dbt_expectations.expect_column_value_lengths_to_equal:
         value: 8
@@ -1756,11 +1759,11 @@ models:
     - accepted_values:
         values:
         - '0'
-        - '1'
+        - '1.34'
         quote: false
     - dbt_utils.accepted_range:
         min_value: 0
-        max_value: 0
+        max_value: 0.01
   - name: MBEW_EKALR
     tests:
     - accepted_values:
@@ -1785,11 +1788,11 @@ models:
     tests:
     - accepted_values:
         values:
-        - ''
         - X
         quote: true
-    - dbt_expectations.expect_column_value_lengths_to_equal:
-        value: 1
+    - dbt_expectations.expect_column_value_lengths_to_be_between:
+        min_value: 0
+        max_value: 1
         row_condition: '`MBEW_HKMAT` is not null'
   - name: GrossWeight_MARA_BRGEW
     tests:
@@ -1800,12 +1803,12 @@ models:
     tests:
     - dbt_utils.accepted_range:
         min_value: 0
-        max_value: 200000
+        max_value: 100000
   - name: Volume_MARA_VOLUM
     tests:
     - dbt_utils.accepted_range:
         min_value: 0
-        max_value: 4541184
+        max_value: 5460000
   - name: Length_MARA_LAENG
     tests:
     - dbt_utils.accepted_range:
@@ -1820,7 +1823,7 @@ models:
     tests:
     - dbt_utils.accepted_range:
         min_value: 0
-        max_value: 2272
+        max_value: 1590
   - name: MinimumRemainingShelfLife_MARA_MHDRZ
     tests:
     - dbt_utils.accepted_range:
@@ -1835,12 +1838,12 @@ models:
     tests:
     - dbt_utils.accepted_range:
         min_value: 0
-        max_value: 575000
+        max_value: 17623
   - name: MARC_WEBAZ
     tests:
     - dbt_utils.accepted_range:
         min_value: 0
-        max_value: 28
+        max_value: 36
   - name: MARC_DZEIT
     tests:
     - dbt_utils.accepted_range:
@@ -1850,27 +1853,27 @@ models:
     tests:
     - dbt_utils.accepted_range:
         min_value: 0
-        max_value: 20000
+        max_value: 20460
   - name: MARC_BSTMI
     tests:
     - dbt_utils.accepted_range:
         min_value: 0
-        max_value: 60000
+        max_value: 50000
   - name: MARC_EISLO
     tests:
     - dbt_utils.accepted_range:
         min_value: 0
-        max_value: 100
+        max_value: 483
   - name: MARC_PLIFZ
     tests:
     - dbt_utils.accepted_range:
         min_value: 0
-        max_value: 777
+        max_value: 779
   - name: MARC_WZEIT
     tests:
     - dbt_utils.accepted_range:
         min_value: 0
-        max_value: 565
+        max_value: 555
   - name: MARC_LOSGR
     tests:
     - dbt_utils.accepted_range:
@@ -1880,17 +1883,17 @@ models:
     tests:
     - dbt_utils.accepted_range:
         min_value: 0
-        max_value: 344000
+        max_value: 15000
   - name: MARC_BSTRF
     tests:
     - dbt_utils.accepted_range:
         min_value: 0
-        max_value: 20000
+        max_value: 100000
   - name: MARC_EISBE
     tests:
     - dbt_utils.accepted_range:
         min_value: 0
-        max_value: 100000
+        max_value: 90000
   - name: Minimum_order_quantity_in_base_UOM_MVKE_AUMNG
     tests:
     - dbt_utils.accepted_range:
@@ -1900,42 +1903,42 @@ models:
     tests:
     - dbt_utils.accepted_range:
         min_value: 0
-        max_value: 2000
+        max_value: 9800
   - name: MBEW_PEINH
     tests:
     - dbt_utils.accepted_range:
         min_value: 1
-        max_value: 10000
+        max_value: 20000
   - name: MBEW_STPRS
     tests:
     - dbt_utils.accepted_range:
-        min_value: 0
-        max_value: 3020785.6
+        min_value: 0.01
+        max_value: 2988253.33
   - name: MBEW_VPLPR
     tests:
     - dbt_utils.accepted_range:
         min_value: 0
-        max_value: 3032935.88
+        max_value: 1015237.34
   - name: MBEW_ZPLP1
     tests:
     - dbt_utils.accepted_range:
         min_value: 0
-        max_value: 909740.15
+        max_value: 1521844
   - name: MBEW_ZPLP3
     tests:
     - dbt_utils.accepted_range:
         min_value: 0
-        max_value: 30265
+        max_value: 259927.8
   - name: MBEW_VERPR
     tests:
     - dbt_utils.accepted_range:
         min_value: 0
-        max_value: 4278946.64
+        max_value: 2405065.12
   - name: MBEW_ZPLP2
     tests:
     - dbt_utils.accepted_range:
         min_value: 0
-        max_value: 1460177.5
+        max_value: 677967.91
   - name: MaterialNumber_MARA_MATNR
     tests:
     - dbt_expectations.expect_column_value_lengths_to_be_between:
@@ -1957,7 +1960,7 @@ models:
   - name: MaintenanceStatusOfCompleteMaterial_MARA_VPSTA
     tests:
     - dbt_expectations.expect_column_value_lengths_to_be_between:
-        min_value: 2
+        min_value: 1
         max_value: 15
         row_condition: '`MaintenanceStatusOfCompleteMaterial_MARA_VPSTA` is not null'
   - name: MaintenanceStatus_MARA_PSTAT
@@ -2005,7 +2008,7 @@ models:
     tests:
     - dbt_expectations.expect_column_value_lengths_to_be_between:
         min_value: 0
-        max_value: 132
+        max_value: 84
         row_condition: '`Extended_CMP_Internal_Description_ZZCMPINTRMAKT` is not null'
   - name: Marketing_required_service_level_MARA_ZZMKTSL
     tests:
@@ -2107,7 +2110,7 @@ models:
     tests:
     - dbt_expectations.expect_column_value_lengths_to_be_between:
         min_value: 0
-        max_value: 7
+        max_value: 6
         row_condition: '`ExternalMaterialGroup_MARA_EXTWG` is not null'
   - name: CrossPlantConfigurableMaterial_MARA_SATNR
     tests:
@@ -2130,7 +2133,7 @@ models:
     tests:
     - dbt_expectations.expect_column_value_lengths_to_be_between:
         min_value: 0
-        max_value: 31
+        max_value: 30
         row_condition: '`ManufacturerPartNumber_MARA_MFRPN` is not null'
   - name: GeneralItemCategoryGroup_MTPOS_MARA
     tests:
@@ -2185,12 +2188,6 @@ models:
         min_value: 0
         max_value: 1
         row_condition: '`ABC_Indicator_MARC_MAABC` is not null'
-  - name: Checking_Group_Availability_Check_MARC_MTVFP
-    tests:
-    - dbt_expectations.expect_column_value_lengths_to_be_between:
-        min_value: 0
-        max_value: 2
-        row_condition: '`Checking_Group_Availability_Check_MARC_MTVFP` is not null'
   - name: MARC_VINT1
     tests:
     - dbt_expectations.expect_column_value_lengths_to_equal:
@@ -2242,12 +2239,24 @@ models:
         min_value: 0
         max_value: 4
         row_condition: '`MARC_LADGR` is not null'
-  - name: MARC_ZZMIN_STOCK
+  - name: MARC_SSQSS
     tests:
     - dbt_expectations.expect_column_value_lengths_to_be_between:
         min_value: 0
         max_value: 4
+        row_condition: '`MARC_SSQSS` is not null'
+  - name: MARC_ZZMIN_STOCK
+    tests:
+    - dbt_expectations.expect_column_value_lengths_to_be_between:
+        min_value: 0
+        max_value: 8
         row_condition: '`MARC_ZZMIN_STOCK` is not null'
+  - name: MARC_ZZMAX_STOCK
+    tests:
+    - dbt_expectations.expect_column_value_lengths_to_be_between:
+        min_value: 0
+        max_value: 7
+        row_condition: '`MARC_ZZMAX_STOCK` is not null'
   - name: MARC_FEVOR
     tests:
     - dbt_expectations.expect_column_value_lengths_to_be_between:
@@ -2278,12 +2287,6 @@ models:
         min_value: 0
         max_value: 2
         row_condition: '`MARC_MMSTA` is not null'
-  - name: MARC_AUSME
-    tests:
-    - dbt_expectations.expect_column_value_lengths_to_be_between:
-        min_value: 0
-        max_value: 3
-        row_condition: '`MARC_AUSME` is not null'
   - name: MARC_ZZFERTH_CHS
     tests:
     - dbt_expectations.expect_column_value_lengths_to_be_between:
@@ -2311,7 +2314,7 @@ models:
     tests:
     - dbt_expectations.expect_column_value_lengths_to_be_between:
         min_value: 0
-        max_value: 13
+        max_value: 18
         row_condition: '`MARC_ZZFERTH_KUL` is not null'
   - name: MARC_MAABC
     tests:
@@ -2329,7 +2332,7 @@ models:
     tests:
     - dbt_expectations.expect_column_value_lengths_to_be_between:
         min_value: 0
-        max_value: 34
+        max_value: 35
         row_condition: '`MARC_ZZSUPPRDFAMILY` is not null'
   - name: DChain_MVKE_VMSTA
     tests:
@@ -2420,7 +2423,7 @@ models:
   - name: MaterialDescription_MAKT_MAKTX
     tests:
     - dbt_expectations.expect_column_value_lengths_to_be_between:
-        min_value: 1
+        min_value: 2
         max_value: 40
         row_condition: '`MaterialDescription_MAKT_MAKTX` is not null'
   - name: MBEW_BKLAS
