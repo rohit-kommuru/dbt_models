@@ -378,7 +378,7 @@ models:
     - accepted_values:
         values:
         - '0001-01-01'
-        quote: false
+        quote: true
   - name: DeletionDate_MARA_LIQDT
     tests:
     - accepted_values:
@@ -1765,7 +1765,7 @@ models:
     - accepted_values:
         values:
         - '0001-01-01'
-        quote: false
+        quote: true
   - name: MBEW_EKALR
     tests:
     - accepted_values:
