@@ -6,7 +6,7 @@ models:
     - accepted_values:
         values:
         - '400'
-        quote: true
+        quote: null
     - dbt_expectations.expect_column_value_lengths_to_equal:
         value: 3
         row_condition: '`Client_MANDT` is not null'
@@ -16,19 +16,18 @@ models:
         values:
         - ''
         - X
-        quote: true
-    - dbt_expectations.expect_column_value_lengths_to_be_between:
-        min_value: 0
-        max_value: 1
+        quote: null
+    - dbt_expectations.expect_column_value_lengths_to_equal:
+        value: 0
         row_condition: '`FlagMaterialForDeletionAtClientLevel_MARA_LVORM` is not null'
   - name: IndustrySector_MARA_MBRSH
     tests:
     - accepted_values:
         values:
+        - A
         - C
         - M
-        - P
-        quote: true
+        quote: null
     - dbt_expectations.expect_column_value_lengths_to_equal:
         value: 1
         row_condition: '`IndustrySector_MARA_MBRSH` is not null'
@@ -38,7 +37,7 @@ models:
         values:
         - ''
         - Material Used in Shot Weight Calculation
-        quote: true
+        quote: null
     - dbt_expectations.expect_column_value_lengths_to_be_between:
         min_value: 0
         max_value: 40
@@ -49,9 +48,8 @@ models:
         values:
         - ''
         - '1'
-        - '2'
         - '3'
-        quote: true
+        quote: null
     - dbt_expectations.expect_column_value_lengths_to_be_between:
         min_value: 0
         max_value: 1
@@ -61,7 +59,7 @@ models:
     - accepted_values:
         values:
         - ''
-        quote: true
+        quote: null
     - dbt_expectations.expect_column_value_lengths_to_equal:
         value: 0
         row_condition: '`ContainerRequirements_MARA_BEHVO` is not null'
@@ -71,7 +69,7 @@ models:
         values:
         - ''
         - HU
-        quote: true
+        quote: null
     - dbt_expectations.expect_column_value_lengths_to_be_between:
         min_value: 0
         max_value: 2
@@ -82,7 +80,7 @@ models:
         values:
         - ''
         - '0001'
-        quote: true
+        quote: null
     - dbt_expectations.expect_column_value_lengths_to_be_between:
         min_value: 0
         max_value: 4
@@ -93,9 +91,10 @@ models:
         values:
         - ''
         - '00'
+        - '01'
         - '10'
         - '30'
-        quote: true
+        quote: null
     - dbt_expectations.expect_column_value_lengths_to_be_between:
         min_value: 0
         max_value: 2
@@ -105,7 +104,7 @@ models:
     - accepted_values:
         values:
         - ''
-        quote: true
+        quote: null
     - dbt_expectations.expect_column_value_lengths_to_equal:
         value: 0
         row_condition: '`Competitor_MARA_KUNNR` is not null'
@@ -114,7 +113,7 @@ models:
     - accepted_values:
         values:
         - ''
-        quote: true
+        quote: null
     - dbt_expectations.expect_column_value_lengths_to_equal:
         value: 0
         row_condition: '`EuropeanArticleNumber_MARA_EANNR` is not null'
@@ -123,7 +122,7 @@ models:
     - accepted_values:
         values:
         - '0'
-        quote: false
+        quote: null
     - dbt_utils.accepted_range:
         min_value: 0
         max_value: 0
@@ -132,7 +131,7 @@ models:
     - accepted_values:
         values:
         - ''
-        quote: true
+        quote: null
     - dbt_expectations.expect_column_value_lengths_to_equal:
         value: 0
         row_condition: '`ProcurementRule_MARA_BWVOR` is not null'
@@ -141,7 +140,7 @@ models:
     - accepted_values:
         values:
         - ''
-        quote: true
+        quote: null
     - dbt_expectations.expect_column_value_lengths_to_equal:
         value: 0
         row_condition: '`SourceOfSupply_MARA_BWSCL` is not null'
@@ -150,7 +149,7 @@ models:
     - accepted_values:
         values:
         - ''
-        quote: true
+        quote: null
     - dbt_expectations.expect_column_value_lengths_to_equal:
         value: 0
         row_condition: '`SeasonCategory_MARA_SAISO` is not null'
@@ -159,7 +158,7 @@ models:
     - accepted_values:
         values:
         - ''
-        quote: true
+        quote: null
     - dbt_expectations.expect_column_value_lengths_to_equal:
         value: 0
         row_condition: '`LabelType_MARA_ETIAR` is not null'
@@ -168,7 +167,7 @@ models:
     - accepted_values:
         values:
         - ''
-        quote: true
+        quote: null
     - dbt_expectations.expect_column_value_lengths_to_equal:
         value: 0
         row_condition: '`LabelForm_MARA_ETIFO` is not null'
@@ -177,7 +176,7 @@ models:
     - accepted_values:
         values:
         - ''
-        quote: true
+        quote: null
     - dbt_expectations.expect_column_value_lengths_to_equal:
         value: 0
         row_condition: '`Deactivated_MARA_ENTAR` is not null'
@@ -186,7 +185,7 @@ models:
     - accepted_values:
         values:
         - ''
-        quote: true
+        quote: null
     - dbt_expectations.expect_column_value_lengths_to_equal:
         value: 0
         row_condition: '`InternationalArticleNumber_Eanupc_MARA_EAN11` is not null'
@@ -195,7 +194,7 @@ models:
     - accepted_values:
         values:
         - ''
-        quote: true
+        quote: null
     - dbt_expectations.expect_column_value_lengths_to_equal:
         value: 0
         row_condition: '`CategoryOfInternationalArticleNumber_Ean_MARA_NUMTP` is not
@@ -205,7 +204,7 @@ models:
     - accepted_values:
         values:
         - ''
-        quote: true
+        quote: null
     - dbt_expectations.expect_column_value_lengths_to_equal:
         value: 0
         row_condition: '`StockTransferNetChangeCosting_MARA_AEKLK` is not null'
@@ -214,7 +213,7 @@ models:
     - accepted_values:
         values:
         - ''
-        quote: true
+        quote: null
     - dbt_expectations.expect_column_value_lengths_to_equal:
         value: 0
         row_condition: '`CadIndicator_MARA_CADKZ` is not null'
@@ -224,7 +223,7 @@ models:
         values:
         - ''
         - X
-        quote: true
+        quote: null
     - dbt_expectations.expect_column_value_lengths_to_be_between:
         min_value: 0
         max_value: 1
@@ -234,7 +233,7 @@ models:
     - accepted_values:
         values:
         - '0'
-        quote: false
+        quote: null
     - dbt_utils.accepted_range:
         min_value: 0
         max_value: 0
@@ -243,7 +242,7 @@ models:
     - accepted_values:
         values:
         - ''
-        quote: true
+        quote: null
     - dbt_expectations.expect_column_value_lengths_to_equal:
         value: 0
         row_condition: '`UnitOfWeight_AllowedPackagingWeight_MARA_ERGEI` is not null'
@@ -252,7 +251,7 @@ models:
     - accepted_values:
         values:
         - '0'
-        quote: false
+        quote: null
     - dbt_utils.accepted_range:
         min_value: 0
         max_value: 0
@@ -261,7 +260,7 @@ models:
     - accepted_values:
         values:
         - ''
-        quote: true
+        quote: null
     - dbt_expectations.expect_column_value_lengths_to_equal:
         value: 0
         row_condition: '`VolumeUnit_AllowedPackagingVolume_MARA_ERVOE` is not null'
@@ -270,7 +269,7 @@ models:
     - accepted_values:
         values:
         - '0'
-        quote: false
+        quote: null
     - dbt_utils.accepted_range:
         min_value: 0
         max_value: 0
@@ -279,7 +278,7 @@ models:
     - accepted_values:
         values:
         - '0'
-        quote: false
+        quote: null
     - dbt_utils.accepted_range:
         min_value: 0
         max_value: 0
@@ -289,7 +288,7 @@ models:
         values:
         - ''
         - '1'
-        quote: true
+        quote: null
     - dbt_expectations.expect_column_value_lengths_to_be_between:
         min_value: 0
         max_value: 1
@@ -300,7 +299,7 @@ models:
         values:
         - ''
         - X
-        quote: true
+        quote: null
     - dbt_expectations.expect_column_value_lengths_to_be_between:
         min_value: 0
         max_value: 1
@@ -312,7 +311,7 @@ models:
         values:
         - ''
         - X
-        quote: true
+        quote: null
     - dbt_expectations.expect_column_value_lengths_to_be_between:
         min_value: 0
         max_value: 1
@@ -323,7 +322,7 @@ models:
         values:
         - ''
         - X
-        quote: true
+        quote: null
     - dbt_expectations.expect_column_value_lengths_to_be_between:
         min_value: 0
         max_value: 1
@@ -333,7 +332,7 @@ models:
     - accepted_values:
         values:
         - ''
-        quote: true
+        quote: null
     - dbt_expectations.expect_column_value_lengths_to_equal:
         value: 0
         row_condition: '`PackagingMaterialType_MARA_VHART` is not null'
@@ -342,7 +341,7 @@ models:
     - accepted_values:
         values:
         - '0'
-        quote: false
+        quote: null
     - dbt_utils.accepted_range:
         min_value: 0
         max_value: 0
@@ -351,7 +350,7 @@ models:
     - accepted_values:
         values:
         - '0'
-        quote: false
+        quote: null
     - dbt_utils.accepted_range:
         min_value: 0
         max_value: 0
@@ -360,7 +359,7 @@ models:
     - accepted_values:
         values:
         - ''
-        quote: true
+        quote: null
     - dbt_expectations.expect_column_value_lengths_to_equal:
         value: 0
         row_condition: '`MaterialGroup_PackagingMaterials_MARA_MAGRV` is not null'
@@ -369,7 +368,7 @@ models:
     - accepted_values:
         values:
         - ''
-        quote: true
+        quote: null
     - dbt_expectations.expect_column_value_lengths_to_equal:
         value: 0
         row_condition: '`AuthorizationGroup_MARA_BEGRU` is not null'
@@ -390,7 +389,7 @@ models:
     - accepted_values:
         values:
         - ''
-        quote: true
+        quote: null
     - dbt_expectations.expect_column_value_lengths_to_equal:
         value: 0
         row_condition: '`SeasonYear_MARA_SAISJ` is not null'
@@ -399,7 +398,7 @@ models:
     - accepted_values:
         values:
         - ''
-        quote: true
+        quote: null
     - dbt_expectations.expect_column_value_lengths_to_equal:
         value: 0
         row_condition: '`PriceBandCategory_MARA_PLGTP` is not null'
@@ -408,7 +407,7 @@ models:
     - accepted_values:
         values:
         - ''
-        quote: true
+        quote: null
     - dbt_expectations.expect_column_value_lengths_to_equal:
         value: 0
         row_condition: '`EmptiesBillOfMaterial_MARA_MLGUT` is not null'
@@ -417,7 +416,7 @@ models:
     - accepted_values:
         values:
         - ''
-        quote: true
+        quote: null
     - dbt_expectations.expect_column_value_lengths_to_equal:
         value: 0
         row_condition: '`MaterialCategory_MARA_ATTYP` is not null'
@@ -427,7 +426,7 @@ models:
         values:
         - ''
         - X
-        quote: true
+        quote: null
     - dbt_expectations.expect_column_value_lengths_to_be_between:
         min_value: 0
         max_value: 1
@@ -437,10 +436,10 @@ models:
     - accepted_values:
         values:
         - ''
-        - X
-        quote: true
-    - dbt_expectations.expect_column_value_lengths_to_equal:
-        value: 0
+        quote: null
+    - dbt_expectations.expect_column_value_lengths_to_be_between:
+        min_value: 0
+        max_value: 1
         row_condition: '`Indicator_TheMaterialHasAFollowUpMaterial_MARAKZNFM` is not
           null'
   - name: PricingReferenceMaterial_MARA_PMATA
@@ -448,7 +447,7 @@ models:
     - accepted_values:
         values:
         - ''
-        quote: true
+        quote: null
     - dbt_expectations.expect_column_value_lengths_to_equal:
         value: 0
         row_condition: '`PricingReferenceMaterial_MARA_PMATA` is not null'
@@ -459,8 +458,9 @@ models:
         - ''
         - '39'
         - '40'
-        - '50'
-        quote: true
+        - '60'
+        - '99'
+        quote: null
     - dbt_expectations.expect_column_value_lengths_to_be_between:
         min_value: 0
         max_value: 2
@@ -470,7 +470,7 @@ models:
     - accepted_values:
         values:
         - ''
-        quote: true
+        quote: null
     - dbt_expectations.expect_column_value_lengths_to_equal:
         value: 0
         row_condition: '`TaxClassificationOfTheMaterial_MARA_TAKLV` is not null'
@@ -479,7 +479,7 @@ models:
     - accepted_values:
         values:
         - ''
-        quote: true
+        quote: null
     - dbt_expectations.expect_column_value_lengths_to_equal:
         value: 0
         row_condition: '`CatalogProfile_MARA_RBNRM` is not null'
@@ -488,7 +488,7 @@ models:
     - accepted_values:
         values:
         - '0'
-        quote: false
+        quote: null
     - dbt_utils.accepted_range:
         min_value: 0
         max_value: 0
@@ -497,7 +497,7 @@ models:
     - accepted_values:
         values:
         - ''
-        quote: true
+        quote: null
     - dbt_expectations.expect_column_value_lengths_to_equal:
         value: 0
         row_condition: '`ContentUnit_MARA_INHME` is not null'
@@ -506,7 +506,7 @@ models:
     - accepted_values:
         values:
         - '0'
-        quote: false
+        quote: null
     - dbt_utils.accepted_range:
         min_value: 0
         max_value: 0
@@ -515,7 +515,7 @@ models:
     - accepted_values:
         values:
         - '0'
-        quote: false
+        quote: null
     - dbt_utils.accepted_range:
         min_value: 0
         max_value: 0
@@ -524,7 +524,7 @@ models:
     - accepted_values:
         values:
         - '0'
-        quote: false
+        quote: null
     - dbt_utils.accepted_range:
         min_value: 0
         max_value: 0
@@ -533,7 +533,7 @@ models:
     - accepted_values:
         values:
         - ''
-        quote: true
+        quote: null
     - dbt_expectations.expect_column_value_lengths_to_equal:
         value: 0
         row_condition: '`QuantityConversionMethod_MARA_CMETH` is not null'
@@ -543,7 +543,7 @@ models:
         values:
         - ''
         - X
-        quote: true
+        quote: null
     - dbt_expectations.expect_column_value_lengths_to_be_between:
         min_value: 0
         max_value: 1
@@ -553,7 +553,7 @@ models:
     - accepted_values:
         values:
         - ''
-        quote: true
+        quote: null
     - dbt_expectations.expect_column_value_lengths_to_equal:
         value: 0
         row_condition: '`ProductAllocationDeterminationProcedure_MARA_KOSCH` is not
@@ -563,7 +563,7 @@ models:
     - accepted_values:
         values:
         - ''
-        quote: true
+        quote: null
     - dbt_expectations.expect_column_value_lengths_to_equal:
         value: 0
         row_condition: '`PricingProfileForVariants_MARA_SPROF` is not null'
@@ -572,29 +572,16 @@ models:
     - accepted_values:
         values:
         - ''
-        quote: true
+        quote: null
     - dbt_expectations.expect_column_value_lengths_to_equal:
         value: 0
         row_condition: '`MaterialQualifiesForDiscountInKind_MARA_NRFHG` is not null'
-  - name: ManufacturerNumber_MARA_MFRNR
-    tests:
-    - accepted_values:
-        values:
-        - ''
-        - 0000118516
-        - 0000126910
-        - 0000127809
-        quote: true
-    - dbt_expectations.expect_column_value_lengths_to_be_between:
-        min_value: 0
-        max_value: 10
-        row_condition: '`ManufacturerNumber_MARA_MFRNR` is not null'
   - name: NumberInventoryManagedMaterial_MARA_BMATN
     tests:
     - accepted_values:
         values:
         - ''
-        quote: true
+        quote: null
     - dbt_expectations.expect_column_value_lengths_to_equal:
         value: 0
         row_condition: '`NumberInventoryManagedMaterial_MARA_BMATN` is not null'
@@ -603,7 +590,7 @@ models:
     - accepted_values:
         values:
         - ''
-        quote: true
+        quote: null
     - dbt_expectations.expect_column_value_lengths_to_equal:
         value: 0
         row_condition: '`MfrPartProfile_MARA_MPROF` is not null'
@@ -612,7 +599,7 @@ models:
     - accepted_values:
         values:
         - ''
-        quote: true
+        quote: null
     - dbt_expectations.expect_column_value_lengths_to_equal:
         value: 0
         row_condition: '`UnitsOfMeasureUsage_MARA_KZWSM` is not null'
@@ -621,7 +608,7 @@ models:
     - accepted_values:
         values:
         - ''
-        quote: true
+        quote: null
     - dbt_expectations.expect_column_value_lengths_to_equal:
         value: 0
         row_condition: '`RolloutInASeason_MARA_SAITY` is not null'
@@ -633,7 +620,7 @@ models:
         - GPP
         - NAU
         - NDG
-        quote: true
+        quote: null
     - dbt_expectations.expect_column_value_lengths_to_be_between:
         min_value: 0
         max_value: 3
@@ -643,17 +630,17 @@ models:
     - accepted_values:
         values:
         - ''
-        - X
-        quote: true
-    - dbt_expectations.expect_column_value_lengths_to_equal:
-        value: 0
+        quote: null
+    - dbt_expectations.expect_column_value_lengths_to_be_between:
+        min_value: 0
+        max_value: 1
         row_condition: '`Indicator_HighlyViscous_MARA_IHIVI` is not null'
   - name: Indicator_InBulkLiquid_MARA_ILOOS
     tests:
     - accepted_values:
         values:
         - ''
-        quote: true
+        quote: null
     - dbt_expectations.expect_column_value_lengths_to_equal:
         value: 0
         row_condition: '`Indicator_InBulkLiquid_MARA_ILOOS` is not null'
@@ -663,7 +650,7 @@ models:
         values:
         - ''
         - '1'
-        quote: true
+        quote: null
     - dbt_expectations.expect_column_value_lengths_to_be_between:
         min_value: 0
         max_value: 1
@@ -673,7 +660,7 @@ models:
     - accepted_values:
         values:
         - ''
-        quote: true
+        quote: null
     - dbt_expectations.expect_column_value_lengths_to_equal:
         value: 0
         row_condition: '`PackagingMaterialIsClosedPackaging_MARA_KZGVH` is not null'
@@ -683,7 +670,7 @@ models:
         values:
         - ''
         - X
-        quote: true
+        quote: null
     - dbt_expectations.expect_column_value_lengths_to_be_between:
         min_value: 0
         max_value: 1
@@ -695,7 +682,7 @@ models:
         values:
         - ''
         - X
-        quote: true
+        quote: null
     - dbt_expectations.expect_column_value_lengths_to_be_between:
         min_value: 0
         max_value: 1
@@ -706,7 +693,7 @@ models:
     - accepted_values:
         values:
         - '00'
-        quote: true
+        quote: null
     - dbt_expectations.expect_column_value_lengths_to_equal:
         value: 2
         row_condition: '`MaterialCompletionLevel_MARA_COMPL` is not null'
@@ -716,7 +703,8 @@ models:
         values:
         - D
         - M
-        quote: true
+        - Y
+        quote: null
     - dbt_expectations.expect_column_value_lengths_to_equal:
         value: 1
         row_condition: '`PeriodIndicatorForShelfLifeExpirationDate_MARA_IPRKZ` is
@@ -726,7 +714,7 @@ models:
     - accepted_values:
         values:
         - ''
-        quote: true
+        quote: null
     - dbt_expectations.expect_column_value_lengths_to_equal:
         value: 0
         row_condition: '`RoundingRuleForCalculationOfSled_MARA_RDMHD` is not null'
@@ -735,7 +723,7 @@ models:
     - accepted_values:
         values:
         - ''
-        quote: true
+        quote: null
     - dbt_expectations.expect_column_value_lengths_to_equal:
         value: 0
         row_condition: '`Indicator_ProductCompositionPrintedOnPackaging_MARA_PRZUS`
@@ -745,7 +733,7 @@ models:
     - accepted_values:
         values:
         - ''
-        quote: true
+        quote: null
     - dbt_expectations.expect_column_value_lengths_to_equal:
         value: 0
         row_condition: '`GenericMaterialWithLogisticalVariants__MARA_BFLME` is not
@@ -755,7 +743,7 @@ models:
     - accepted_values:
         values:
         - ''
-        quote: true
+        quote: null
     - dbt_expectations.expect_column_value_lengths_to_equal:
         value: 0
         row_condition: '`MaterialIsLocked_MARA_MATFI` is not null'
@@ -764,7 +752,7 @@ models:
     - accepted_values:
         values:
         - ''
-        quote: true
+        quote: null
     - dbt_expectations.expect_column_value_lengths_to_equal:
         value: 0
         row_condition: '`RelevantForConfigurationManagement_MARA_CMREL` is not null'
@@ -773,7 +761,7 @@ models:
     - accepted_values:
         values:
         - ''
-        quote: true
+        quote: null
     - dbt_expectations.expect_column_value_lengths_to_equal:
         value: 0
         row_condition: '`AssortmentListType_MARA_BBTYP` is not null'
@@ -783,7 +771,7 @@ models:
         values:
         - ''
         - B
-        quote: true
+        quote: null
     - dbt_expectations.expect_column_value_lengths_to_be_between:
         min_value: 0
         max_value: 1
@@ -793,7 +781,7 @@ models:
     - accepted_values:
         values:
         - ''
-        quote: true
+        quote: null
     - dbt_expectations.expect_column_value_lengths_to_equal:
         value: 0
         row_condition: '`GlobalTradeItemNumberVariant_MARA_GTIN_VARIANT` is not null'
@@ -802,7 +790,7 @@ models:
     - accepted_values:
         values:
         - ''
-        quote: true
+        quote: null
     - dbt_expectations.expect_column_value_lengths_to_equal:
         value: 0
         row_condition: '`MaterialNumberOfTheGenericMaterialInPrepackMaterials_MARA_GENNR`
@@ -812,7 +800,7 @@ models:
     - accepted_values:
         values:
         - ''
-        quote: true
+        quote: null
     - dbt_expectations.expect_column_value_lengths_to_equal:
         value: 0
         row_condition: '`ReferenceMaterialForMaterialsPackedInSameWay_MARA_RMATP`
@@ -822,7 +810,7 @@ models:
     - accepted_values:
         values:
         - ''
-        quote: true
+        quote: null
     - dbt_expectations.expect_column_value_lengths_to_equal:
         value: 0
         row_condition: '`Indicator_GlobalDataSynchronizationRelevant_MARA_GDS_RELEVANT`
@@ -832,7 +820,7 @@ models:
     - accepted_values:
         values:
         - ''
-        quote: true
+        quote: null
     - dbt_expectations.expect_column_value_lengths_to_equal:
         value: 0
         row_condition: '`AcceptanceAtOrigin_MARA_WEORA` is not null'
@@ -841,7 +829,7 @@ models:
     - accepted_values:
         values:
         - ''
-        quote: true
+        quote: null
     - dbt_expectations.expect_column_value_lengths_to_equal:
         value: 0
         row_condition: '`StandardHuType_MARA_HUTYP_DFLT` is not null'
@@ -850,7 +838,7 @@ models:
     - accepted_values:
         values:
         - ''
-        quote: true
+        quote: null
     - dbt_expectations.expect_column_value_lengths_to_equal:
         value: 0
         row_condition: '`Pilferable_MARA_PILFERABLE` is not null'
@@ -859,7 +847,7 @@ models:
     - accepted_values:
         values:
         - ''
-        quote: true
+        quote: null
     - dbt_expectations.expect_column_value_lengths_to_equal:
         value: 0
         row_condition: '`WarehouseStorageCondition_MARA_WHSTC` is not null'
@@ -868,7 +856,7 @@ models:
     - accepted_values:
         values:
         - ''
-        quote: true
+        quote: null
     - dbt_expectations.expect_column_value_lengths_to_equal:
         value: 0
         row_condition: '`WarehouseMaterialGroup_MARA_WHMATGR` is not null'
@@ -877,7 +865,7 @@ models:
     - accepted_values:
         values:
         - ''
-        quote: true
+        quote: null
     - dbt_expectations.expect_column_value_lengths_to_equal:
         value: 0
         row_condition: '`HandlingIndicator_MARA_HNDLCODE` is not null'
@@ -886,7 +874,7 @@ models:
     - accepted_values:
         values:
         - ''
-        quote: true
+        quote: null
     - dbt_expectations.expect_column_value_lengths_to_equal:
         value: 0
         row_condition: '`RelevantForHazardousSubstances_MARA_HAZMAT` is not null'
@@ -895,7 +883,7 @@ models:
     - accepted_values:
         values:
         - ''
-        quote: true
+        quote: null
     - dbt_expectations.expect_column_value_lengths_to_equal:
         value: 0
         row_condition: '`HandlingUnitType_MARA_HUTYP` is not null'
@@ -904,7 +892,7 @@ models:
     - accepted_values:
         values:
         - ''
-        quote: true
+        quote: null
     - dbt_expectations.expect_column_value_lengths_to_equal:
         value: 0
         row_condition: '`VariableTareWeight_MARA_TARE_VAR` is not null'
@@ -913,7 +901,7 @@ models:
     - accepted_values:
         values:
         - '0'
-        quote: false
+        quote: null
     - dbt_utils.accepted_range:
         min_value: 0
         max_value: 0
@@ -922,7 +910,7 @@ models:
     - accepted_values:
         values:
         - '0'
-        quote: false
+        quote: null
     - dbt_utils.accepted_range:
         min_value: 0
         max_value: 0
@@ -931,7 +919,7 @@ models:
     - accepted_values:
         values:
         - '0'
-        quote: false
+        quote: null
     - dbt_utils.accepted_range:
         min_value: 0
         max_value: 0
@@ -940,7 +928,7 @@ models:
     - accepted_values:
         values:
         - '0'
-        quote: false
+        quote: null
     - dbt_utils.accepted_range:
         min_value: 0
         max_value: 0
@@ -949,7 +937,7 @@ models:
     - accepted_values:
         values:
         - '0'
-        quote: false
+        quote: null
     - dbt_utils.accepted_range:
         min_value: 0
         max_value: 0
@@ -958,7 +946,7 @@ models:
     - accepted_values:
         values:
         - ''
-        quote: true
+        quote: null
     - dbt_expectations.expect_column_value_lengths_to_equal:
         value: 0
         row_condition: '`UnitOfMeasureForMaximumPackingLengthwidthheight_MARA_MAXDIM_UOM`
@@ -968,7 +956,7 @@ models:
     - accepted_values:
         values:
         - ''
-        quote: true
+        quote: null
     - dbt_expectations.expect_column_value_lengths_to_equal:
         value: 0
         row_condition: '`CountryOfOriginOfMaterial_MARA_HERKL` is not null'
@@ -977,7 +965,7 @@ models:
     - accepted_values:
         values:
         - ''
-        quote: true
+        quote: null
     - dbt_expectations.expect_column_value_lengths_to_equal:
         value: 0
         row_condition: '`MaterialFreightGroup_MARA_MFRGR` is not null'
@@ -986,7 +974,7 @@ models:
     - accepted_values:
         values:
         - '0'
-        quote: false
+        quote: null
     - dbt_utils.accepted_range:
         min_value: 0
         max_value: 0
@@ -995,7 +983,7 @@ models:
     - accepted_values:
         values:
         - ''
-        quote: true
+        quote: null
     - dbt_expectations.expect_column_value_lengths_to_equal:
         value: 0
         row_condition: '`TimeUnitForQuarantinePeriod_MARA_QQTIMEUOM` is not null'
@@ -1004,7 +992,7 @@ models:
     - accepted_values:
         values:
         - ''
-        quote: true
+        quote: null
     - dbt_expectations.expect_column_value_lengths_to_equal:
         value: 0
         row_condition: '`QualityInspectionGroup_MARA_QGRP` is not null'
@@ -1013,7 +1001,7 @@ models:
     - accepted_values:
         values:
         - ''
-        quote: true
+        quote: null
     - dbt_expectations.expect_column_value_lengths_to_equal:
         value: 0
         row_condition: '`SerialNumberProfile_MARA_SERIAL` is not null'
@@ -1022,7 +1010,7 @@ models:
     - accepted_values:
         values:
         - ''
-        quote: true
+        quote: null
     - dbt_expectations.expect_column_value_lengths_to_equal:
         value: 0
         row_condition: '`FormName_PS_SMARTFORM` is not null'
@@ -1031,7 +1019,7 @@ models:
     - accepted_values:
         values:
         - ''
-        quote: true
+        quote: null
     - dbt_expectations.expect_column_value_lengths_to_equal:
         value: 0
         row_condition: '`EwmCw_LogisticsUnitOfMeasure_MARA_LOGUNIT` is not null'
@@ -1040,7 +1028,7 @@ models:
     - accepted_values:
         values:
         - ''
-        quote: true
+        quote: null
     - dbt_expectations.expect_column_value_lengths_to_equal:
         value: 0
         row_condition: '`EwmCw_MaterialIsACatchWeightMaterial_MARA_CWQREL` is not
@@ -1050,7 +1038,7 @@ models:
     - accepted_values:
         values:
         - ''
-        quote: true
+        quote: null
     - dbt_expectations.expect_column_value_lengths_to_equal:
         value: 0
         row_condition: '`EwmCw_CatchWeightProfileForEnteringCwQuantity_MARA_CWQPROC`
@@ -1060,7 +1048,7 @@ models:
     - accepted_values:
         values:
         - ''
-        quote: true
+        quote: null
     - dbt_expectations.expect_column_value_lengths_to_equal:
         value: 0
         row_condition: '`EwmCatchWeightToleranceGroupForEwm_MARA_CWQTOLGR` is not
@@ -1070,7 +1058,7 @@ models:
     - accepted_values:
         values:
         - ''
-        quote: true
+        quote: null
     - dbt_expectations.expect_column_value_lengths_to_equal:
         value: 0
         row_condition: '`AdjustmentProfile_MARA_ADPROF` is not null'
@@ -1079,7 +1067,7 @@ models:
     - accepted_values:
         values:
         - ''
-        quote: true
+        quote: null
     - dbt_expectations.expect_column_value_lengths_to_equal:
         value: 0
         row_condition: '`IdForAnIntellectualProperty_CrmProduct_MARA_IPMIPPRODUCT`
@@ -1089,7 +1077,7 @@ models:
     - accepted_values:
         values:
         - ''
-        quote: true
+        quote: null
     - dbt_expectations.expect_column_value_lengths_to_equal:
         value: 0
         row_condition: '`VariantPriceAllowed_ForMaterialMaster_MARA_ALLOW_PMAT_IGNO`
@@ -1099,7 +1087,7 @@ models:
     - accepted_values:
         values:
         - ''
-        quote: true
+        quote: null
     - dbt_expectations.expect_column_value_lengths_to_equal:
         value: 0
         row_condition: '`Medium_MARA_MEDIUM` is not null'
@@ -1108,7 +1096,7 @@ models:
     - accepted_values:
         values:
         - ''
-        quote: true
+        quote: null
     - dbt_expectations.expect_column_value_lengths_to_equal:
         value: 0
         row_condition: '`PhysicalCommodity_MARA_COMMODITY` is not null'
@@ -1117,7 +1105,7 @@ models:
     - accepted_values:
         values:
         - ''
-        quote: true
+        quote: null
     - dbt_expectations.expect_column_value_lengths_to_equal:
         value: 0
         row_condition: '`MARA_Brand_BRAND_ID` is not null'
@@ -1129,7 +1117,7 @@ models:
         - E
         - F
         - X
-        quote: true
+        quote: null
     - dbt_expectations.expect_column_value_lengths_to_be_between:
         min_value: 0
         max_value: 1
@@ -1140,35 +1128,22 @@ models:
         values:
         - ''
         - X
-        quote: true
+        quote: null
     - dbt_expectations.expect_column_value_lengths_to_be_between:
         min_value: 0
         max_value: 1
         row_condition: '`Indicator_APOA_MARC_KAUTB` is not null'
-  - name: Checking_Group_Availability_Check_MARC_MTVFP
-    tests:
-    - accepted_values:
-        values:
-        - ''
-        - '02'
-        - KP
-        - Z1
-        - Z7
-        quote: true
-    - dbt_expectations.expect_column_value_lengths_to_be_between:
-        min_value: 0
-        max_value: 2
-        row_condition: '`Checking_Group_Availability_Check_MARC_MTVFP` is not null'
   - name: Component_scrap_percent_MARC_KAUSF
     tests:
     - accepted_values:
         values:
         - '0'
+        - '10'
         - '5'
-        quote: false
+        quote: null
     - dbt_utils.accepted_range:
         min_value: 0
-        max_value: 0
+        max_value: 5
   - name: MARC_SBDKZ
     tests:
     - accepted_values:
@@ -1176,7 +1151,7 @@ models:
         - ''
         - '1'
         - '2'
-        quote: true
+        quote: null
     - dbt_expectations.expect_column_value_lengths_to_be_between:
         min_value: 0
         max_value: 1
@@ -1187,7 +1162,7 @@ models:
         values:
         - ''
         - Z9
-        quote: true
+        quote: null
     - dbt_expectations.expect_column_value_lengths_to_be_between:
         min_value: 0
         max_value: 2
@@ -1198,7 +1173,7 @@ models:
         values:
         - ''
         - X
-        quote: true
+        quote: null
     - dbt_expectations.expect_column_value_lengths_to_be_between:
         min_value: 0
         max_value: 1
@@ -1210,7 +1185,7 @@ models:
         - ''
         - '1'
         - '2'
-        quote: true
+        quote: null
     - dbt_expectations.expect_column_value_lengths_to_be_between:
         min_value: 0
         max_value: 1
@@ -1221,7 +1196,7 @@ models:
         values:
         - ''
         - X
-        quote: true
+        quote: null
     - dbt_expectations.expect_column_value_lengths_to_be_between:
         min_value: 0
         max_value: 1
@@ -1231,7 +1206,7 @@ models:
     - accepted_values:
         values:
         - ''
-        quote: true
+        quote: null
     - dbt_expectations.expect_column_value_lengths_to_be_between:
         min_value: 0
         max_value: 1
@@ -1242,7 +1217,7 @@ models:
         values:
         - ''
         - X
-        quote: true
+        quote: null
     - dbt_expectations.expect_column_value_lengths_to_be_between:
         min_value: 0
         max_value: 1
@@ -1254,7 +1229,7 @@ models:
         - ''
         - '2'
         - '3'
-        quote: true
+        quote: null
     - dbt_expectations.expect_column_value_lengths_to_be_between:
         min_value: 0
         max_value: 1
@@ -1266,7 +1241,7 @@ models:
         - ''
         - '1'
         - '2'
-        quote: true
+        quote: null
     - dbt_expectations.expect_column_value_lengths_to_be_between:
         min_value: 0
         max_value: 1
@@ -1277,7 +1252,7 @@ models:
         values:
         - ''
         - '1925'
-        quote: true
+        quote: null
     - dbt_expectations.expect_column_value_lengths_to_be_between:
         min_value: 0
         max_value: 4
@@ -1287,7 +1262,7 @@ models:
     - accepted_values:
         values:
         - ''
-        quote: true
+        quote: null
     - dbt_expectations.expect_column_value_lengths_to_equal:
         value: 0
         row_condition: '`MARC_SHPRO` is not null'
@@ -1297,7 +1272,7 @@ models:
         values:
         - M
         - P
-        quote: true
+        quote: null
     - dbt_expectations.expect_column_value_lengths_to_equal:
         value: 1
         row_condition: '`MARC_PERKZ` is not null'
@@ -1306,7 +1281,7 @@ models:
     - accepted_values:
         values:
         - '0'
-        quote: false
+        quote: null
     - dbt_utils.accepted_range:
         min_value: 0
         max_value: 0
@@ -1315,7 +1290,7 @@ models:
     - accepted_values:
         values:
         - ''
-        quote: true
+        quote: null
     - dbt_expectations.expect_column_value_lengths_to_equal:
         value: 0
         row_condition: '`MARC_LFRHY` is not null'
@@ -1325,7 +1300,7 @@ models:
         values:
         - ''
         - Z001
-        quote: true
+        quote: null
     - dbt_expectations.expect_column_value_lengths_to_be_between:
         min_value: 0
         max_value: 4
@@ -1335,7 +1310,7 @@ models:
     - accepted_values:
         values:
         - '0'
-        quote: false
+        quote: null
     - dbt_utils.accepted_range:
         min_value: 0
         max_value: 0
@@ -1345,7 +1320,7 @@ models:
         values:
         - ''
         - X
-        quote: true
+        quote: null
     - dbt_expectations.expect_column_value_lengths_to_be_between:
         min_value: 0
         max_value: 1
@@ -1359,7 +1334,7 @@ models:
         - B
         - C
         - E
-        quote: true
+        quote: null
     - dbt_expectations.expect_column_value_lengths_to_be_between:
         min_value: 0
         max_value: 1
@@ -1370,7 +1345,7 @@ models:
         values:
         - ''
         - X
-        quote: true
+        quote: null
     - dbt_expectations.expect_column_value_lengths_to_be_between:
         min_value: 0
         max_value: 1
@@ -1381,7 +1356,7 @@ models:
         values:
         - ''
         - X
-        quote: true
+        quote: null
     - dbt_expectations.expect_column_value_lengths_to_be_between:
         min_value: 0
         max_value: 1
@@ -1391,8 +1366,7 @@ models:
     - accepted_values:
         values:
         - ''
-        - X
-        quote: true
+        quote: null
     - dbt_expectations.expect_column_value_lengths_to_equal:
         value: 0
         row_condition: '`MARC_ZZMES_RELVT` is not null'
@@ -1402,8 +1376,8 @@ models:
         values:
         - ''
         - '000001'
-        - Z00001
-        quote: true
+        - ZPI01
+        quote: null
     - dbt_expectations.expect_column_value_lengths_to_be_between:
         min_value: 0
         max_value: 6
@@ -1413,11 +1387,11 @@ models:
     - accepted_values:
         values:
         - ''
-        - DEA
         - EA
+        - KG
         - M
         - PAK
-        quote: true
+        quote: null
     - dbt_expectations.expect_column_value_lengths_to_be_between:
         min_value: 0
         max_value: 3
@@ -1428,7 +1402,7 @@ models:
         values:
         - ''
         - ZP1
-        quote: true
+        quote: null
     - dbt_expectations.expect_column_value_lengths_to_be_between:
         min_value: 0
         max_value: 3
@@ -1439,9 +1413,10 @@ models:
         values:
         - ''
         - '1'
-        quote: true
-    - dbt_expectations.expect_column_value_lengths_to_equal:
-        value: 0
+        quote: null
+    - dbt_expectations.expect_column_value_lengths_to_be_between:
+        min_value: 0
+        max_value: 1
         row_condition: '`MARC_UCHKZ` is not null'
   - name: MARC_ZZFRCST_FLAG
     tests:
@@ -1449,16 +1424,17 @@ models:
         values:
         - ''
         - Y
-        quote: true
-    - dbt_expectations.expect_column_value_lengths_to_equal:
-        value: 0
+        quote: null
+    - dbt_expectations.expect_column_value_lengths_to_be_between:
+        min_value: 0
+        max_value: 1
         row_condition: '`MARC_ZZFRCST_FLAG` is not null'
   - name: MARC_ZZCRIT_MAT
     tests:
     - accepted_values:
         values:
         - ''
-        quote: true
+        quote: null
     - dbt_expectations.expect_column_value_lengths_to_equal:
         value: 0
         row_condition: '`MARC_ZZCRIT_MAT` is not null'
@@ -1470,7 +1446,7 @@ models:
         - '0000000001'
         - '0000000002'
         - '0000000003'
-        quote: true
+        quote: null
     - dbt_expectations.expect_column_value_lengths_to_be_between:
         min_value: 0
         max_value: 10
@@ -1481,7 +1457,8 @@ models:
         values:
         - ''
         - MON
-        quote: true
+        - TAG
+        quote: null
     - dbt_expectations.expect_column_value_lengths_to_be_between:
         min_value: 0
         max_value: 3
@@ -1492,7 +1469,7 @@ models:
         values:
         - ''
         - '3'
-        quote: true
+        quote: null
     - dbt_expectations.expect_column_value_lengths_to_be_between:
         min_value: 0
         max_value: 1
@@ -1504,7 +1481,7 @@ models:
         - ''
         - '999'
         - IBP
-        quote: true
+        quote: null
     - dbt_expectations.expect_column_value_lengths_to_be_between:
         min_value: 0
         max_value: 3
@@ -1515,7 +1492,7 @@ models:
         values:
         - ''
         - Z004
-        quote: true
+        quote: null
     - dbt_expectations.expect_column_value_lengths_to_be_between:
         min_value: 0
         max_value: 4
@@ -1526,7 +1503,7 @@ models:
         values:
         - ''
         - X
-        quote: true
+        quote: null
     - dbt_expectations.expect_column_value_lengths_to_be_between:
         min_value: 0
         max_value: 1
@@ -1538,7 +1515,7 @@ models:
         - ''
         - '1'
         - '2'
-        quote: true
+        quote: null
     - dbt_expectations.expect_column_value_lengths_to_be_between:
         min_value: 0
         max_value: 1
@@ -1548,8 +1525,9 @@ models:
     - accepted_values:
         values:
         - ''
-        - IM
-        quote: true
+        - 145-1
+        - DR-88
+        quote: null
     - dbt_expectations.expect_column_value_lengths_to_be_between:
         min_value: 0
         max_value: 5
@@ -1559,7 +1537,7 @@ models:
     - accepted_values:
         values:
         - ''
-        quote: true
+        quote: null
     - dbt_expectations.expect_column_value_lengths_to_equal:
         value: 0
         row_condition: '`MARC_ZZFERTH_YNZ` is not null'
@@ -1568,7 +1546,7 @@ models:
     - accepted_values:
         values:
         - ''
-        quote: true
+        quote: null
     - dbt_expectations.expect_column_value_lengths_to_equal:
         value: 0
         row_condition: '`MARC_ZZFERTH_KOR` is not null'
@@ -1578,7 +1556,7 @@ models:
         values:
         - ''
         - '2'
-        quote: true
+        quote: null
     - dbt_expectations.expect_column_value_lengths_to_be_between:
         min_value: 0
         max_value: 1
@@ -1589,8 +1567,8 @@ models:
         values:
         - ''
         - '1'
-        - '3'
-        quote: true
+        - '2'
+        quote: null
     - dbt_expectations.expect_column_value_lengths_to_be_between:
         min_value: 0
         max_value: 1
@@ -1602,7 +1580,7 @@ models:
         - ''
         - N
         - S
-        quote: true
+        quote: null
     - dbt_expectations.expect_column_value_lengths_to_be_between:
         min_value: 0
         max_value: 1
@@ -1612,7 +1590,7 @@ models:
     - accepted_values:
         values:
         - ''
-        quote: true
+        quote: null
     - dbt_expectations.expect_column_value_lengths_to_equal:
         value: 0
         row_condition: '`MARC_ZZMIN_TIP` is not null'
@@ -1621,7 +1599,7 @@ models:
     - accepted_values:
         values:
         - ''
-        quote: true
+        quote: null
     - dbt_expectations.expect_column_value_lengths_to_equal:
         value: 0
         row_condition: '`MARC_ZZMAX_TIP` is not null'
@@ -1631,8 +1609,7 @@ models:
         values:
         - ''
         - '0'
-        - '20'
-        quote: true
+        quote: null
     - dbt_expectations.expect_column_value_lengths_to_be_between:
         min_value: 0
         max_value: 1
@@ -1642,7 +1619,7 @@ models:
     - accepted_values:
         values:
         - E
-        quote: true
+        quote: null
     - dbt_expectations.expect_column_value_lengths_to_equal:
         value: 1
         row_condition: '`MARA_Language_SPRAS` is not null'
@@ -1652,7 +1629,7 @@ models:
         values:
         - ''
         - '1'
-        quote: true
+        quote: null
     - dbt_expectations.expect_column_value_lengths_to_be_between:
         min_value: 0
         max_value: 1
@@ -1663,7 +1640,7 @@ models:
         values:
         - ''
         - X
-        quote: true
+        quote: null
     - dbt_expectations.expect_column_value_lengths_to_be_between:
         min_value: 0
         max_value: 1
@@ -1673,7 +1650,7 @@ models:
     - accepted_values:
         values:
         - '0'
-        quote: false
+        quote: null
     - dbt_utils.accepted_range:
         min_value: 0
         max_value: 0
@@ -1682,7 +1659,7 @@ models:
     - accepted_values:
         values:
         - ''
-        quote: true
+        quote: null
     - dbt_expectations.expect_column_value_lengths_to_equal:
         value: 0
         row_condition: '`Default_storage_location_for_external_procurement_MDMA_LGFSB`
@@ -1690,9 +1667,8 @@ models:
   - name: Fixed_lot_size_MDMA_BSTFE
     tests:
     - accepted_values:
-        values:
-        - '0'
-        quote: false
+        values: []
+        quote: null
     - dbt_utils.accepted_range:
         min_value: 0
         max_value: 0
@@ -1700,8 +1676,8 @@ models:
     tests:
     - accepted_values:
         values:
-        - ME01
-        quote: true
+        - ME02
+        quote: null
     - dbt_expectations.expect_column_value_lengths_to_equal:
         value: 4
         row_condition: '`Issue_Storage_Location_MDMA_LGPRO` is not null'
@@ -1709,17 +1685,18 @@ models:
     tests:
     - accepted_values:
         values:
+        - W2
         - W6
-        quote: true
+        quote: null
     - dbt_expectations.expect_column_value_lengths_to_equal:
-        value: 0
+        value: 2
         row_condition: '`Lot_size_MDMA_DISLS` is not null'
   - name: Maximum_Lot_Size_MDMA_BSTMA
     tests:
     - accepted_values:
         values:
         - '0'
-        quote: false
+        quote: null
     - dbt_utils.accepted_range:
         min_value: 0
         max_value: 0
@@ -1728,7 +1705,7 @@ models:
     - accepted_values:
         values:
         - '0'
-        quote: false
+        quote: null
     - dbt_utils.accepted_range:
         min_value: 0
         max_value: 0
@@ -1736,8 +1713,9 @@ models:
     tests:
     - accepted_values:
         values:
-        - 1920ME02
-        quote: true
+        - 1920ME01
+        - VN136454
+        quote: null
     - dbt_expectations.expect_column_value_lengths_to_equal:
         value: 8
         row_condition: '`MRP_Area_MDMA_BERID` is not null'
@@ -1746,7 +1724,7 @@ models:
     - accepted_values:
         values:
         - ''
-        quote: true
+        quote: null
     - dbt_expectations.expect_column_value_lengths_to_equal:
         value: 0
         row_condition: '`MRP_Group_MDMA_DISGRP` is not null'
@@ -1755,8 +1733,9 @@ models:
     - accepted_values:
         values:
         - '0'
-        - '4.25'
-        quote: false
+        - '1.68'
+        - '79.23'
+        quote: null
     - dbt_utils.accepted_range:
         min_value: 0
         max_value: 0
@@ -1765,6 +1744,9 @@ models:
     - accepted_values:
         values:
         - '0001-01-01'
+        - '2022-05-31'
+        - '2022-07-15'
+        - '2022-10-20'
         quote: true
   - name: MBEW_EKALR
     tests:
@@ -1772,7 +1754,7 @@ models:
         values:
         - ''
         - X
-        quote: true
+        quote: null
     - dbt_expectations.expect_column_value_lengths_to_be_between:
         min_value: 0
         max_value: 1
@@ -1782,7 +1764,7 @@ models:
     - accepted_values:
         values:
         - S
-        quote: true
+        quote: null
     - dbt_expectations.expect_column_value_lengths_to_equal:
         value: 1
         row_condition: '`MBEW_VPRSV` is not null'
@@ -1790,28 +1772,26 @@ models:
     tests:
     - accepted_values:
         values:
-        - ''
         - X
-        quote: true
-    - dbt_expectations.expect_column_value_lengths_to_be_between:
-        min_value: 0
-        max_value: 1
+        quote: null
+    - dbt_expectations.expect_column_value_lengths_to_equal:
+        value: 1
         row_condition: '`MBEW_HKMAT` is not null'
   - name: GrossWeight_MARA_BRGEW
     tests:
     - dbt_utils.accepted_range:
         min_value: 0
-        max_value: 78033
+        max_value: 65000
   - name: NetWeight_MARA_NTGEW
     tests:
     - dbt_utils.accepted_range:
         min_value: 0
-        max_value: 200000
+        max_value: 38267
   - name: Volume_MARA_VOLUM
     tests:
     - dbt_utils.accepted_range:
         min_value: 0
-        max_value: 49174190.628
+        max_value: 796411.31
   - name: Length_MARA_LAENG
     tests:
     - dbt_utils.accepted_range:
@@ -1826,12 +1806,12 @@ models:
     tests:
     - dbt_utils.accepted_range:
         min_value: 0
-        max_value: 910
+        max_value: 1130
   - name: MinimumRemainingShelfLife_MARA_MHDRZ
     tests:
     - dbt_utils.accepted_range:
         min_value: 0
-        max_value: 270
+        max_value: 365
   - name: TotalShelfLife_MARA_MHDHB
     tests:
     - dbt_utils.accepted_range:
@@ -1841,37 +1821,37 @@ models:
     tests:
     - dbt_utils.accepted_range:
         min_value: 0
-        max_value: 760000
+        max_value: 45000
   - name: MARC_WEBAZ
     tests:
     - dbt_utils.accepted_range:
         min_value: 0
-        max_value: 36
+        max_value: 28
   - name: MARC_DZEIT
     tests:
     - dbt_utils.accepted_range:
         min_value: 0
-        max_value: 555
+        max_value: 889
   - name: MARC_BSTMA
     tests:
     - dbt_utils.accepted_range:
         min_value: 0
-        max_value: 18000
+        max_value: 5000
   - name: MARC_BSTMI
     tests:
     - dbt_utils.accepted_range:
         min_value: 0
-        max_value: 50000
+        max_value: 100000
   - name: MARC_EISLO
     tests:
     - dbt_utils.accepted_range:
         min_value: 0
-        max_value: 5
+        max_value: 1632
   - name: MARC_PLIFZ
     tests:
     - dbt_utils.accepted_range:
         min_value: 0
-        max_value: 777
+        max_value: 830
   - name: MARC_WZEIT
     tests:
     - dbt_utils.accepted_range:
@@ -1881,32 +1861,32 @@ models:
     tests:
     - dbt_utils.accepted_range:
         min_value: 0
-        max_value: 200000
+        max_value: 1140000
   - name: MARC_MINBE
     tests:
     - dbt_utils.accepted_range:
         min_value: 0
-        max_value: 105600
+        max_value: 63000
   - name: MARC_BSTRF
     tests:
     - dbt_utils.accepted_range:
         min_value: 0
-        max_value: 56750
+        max_value: 22700
   - name: MARC_EISBE
     tests:
     - dbt_utils.accepted_range:
         min_value: 0
-        max_value: 8000000
+        max_value: 96000
   - name: Minimum_order_quantity_in_base_UOM_MVKE_AUMNG
     tests:
     - dbt_utils.accepted_range:
         min_value: 0
-        max_value: 10800
+        max_value: 42000
   - name: Delivery_unit_MVKE_SCMNG
     tests:
     - dbt_utils.accepted_range:
         min_value: 0
-        max_value: 2000
+        max_value: 3200
   - name: MBEW_PEINH
     tests:
     - dbt_utils.accepted_range:
@@ -1916,36 +1896,36 @@ models:
     tests:
     - dbt_utils.accepted_range:
         min_value: 0
-        max_value: 3020785.6
+        max_value: 2974778.1
   - name: MBEW_VPLPR
     tests:
     - dbt_utils.accepted_range:
         min_value: 0
-        max_value: 1750650.3
+        max_value: 1908291.8
   - name: MBEW_ZPLP1
     tests:
     - dbt_utils.accepted_range:
         min_value: 0
-        max_value: 2155173
+        max_value: 2654865
   - name: MBEW_ZPLP3
     tests:
     - dbt_utils.accepted_range:
         min_value: 0
-        max_value: 40385.5
+        max_value: 19088
   - name: MBEW_VERPR
     tests:
     - dbt_utils.accepted_range:
         min_value: 0
-        max_value: 692674.86
+        max_value: 2405066.67
   - name: MBEW_ZPLP2
     tests:
     - dbt_utils.accepted_range:
         min_value: 0
-        max_value: 62418
+        max_value: 138938.1
   - name: MaterialNumber_MARA_MATNR
     tests:
     - dbt_expectations.expect_column_value_lengths_to_be_between:
-        min_value: 1
+        min_value: 2
         max_value: 18
         row_condition: '`MaterialNumber_MARA_MATNR` is not null'
   - name: NameOfPersonWhoCreatedTheObject_MARA_ERNAM
@@ -1969,7 +1949,7 @@ models:
   - name: MaintenanceStatus_MARA_PSTAT
     tests:
     - dbt_expectations.expect_column_value_lengths_to_be_between:
-        min_value: 2
+        min_value: 1
         max_value: 13
         row_condition: '`MaintenanceStatus_MARA_PSTAT` is not null'
   - name: MaterialType_MARA_MTART
@@ -2011,7 +1991,7 @@ models:
     tests:
     - dbt_expectations.expect_column_value_lengths_to_be_between:
         min_value: 0
-        max_value: 83
+        max_value: 78
         row_condition: '`Extended_CMP_Internal_Description_ZZCMPINTRMAKT` is not null'
   - name: Marketing_required_service_level_MARA_ZZMKTSL
     tests:
@@ -2047,7 +2027,7 @@ models:
     tests:
     - dbt_expectations.expect_column_value_lengths_to_be_between:
         min_value: 0
-        max_value: 16
+        max_value: 18
         row_condition: '`ProductioInspectionMemo_MARA_FERTH` is not null'
   - name: PageFormatOfProductionMemo_MARA_FORMT
     tests:
@@ -2059,7 +2039,7 @@ models:
     tests:
     - dbt_expectations.expect_column_value_lengths_to_be_between:
         min_value: 0
-        max_value: 32
+        max_value: 31
         row_condition: '`SizeDimensions_MARA_GROES` is not null'
   - name: LaboratoryDesignOffice_MARA_LABOR
     tests:
@@ -2136,8 +2116,14 @@ models:
     tests:
     - dbt_expectations.expect_column_value_lengths_to_be_between:
         min_value: 0
-        max_value: 27
+        max_value: 25
         row_condition: '`ManufacturerPartNumber_MARA_MFRPN` is not null'
+  - name: ManufacturerNumber_MARA_MFRNR
+    tests:
+    - dbt_expectations.expect_column_value_lengths_to_be_between:
+        min_value: 0
+        max_value: 10
+        row_condition: '`ManufacturerNumber_MARA_MFRNR` is not null'
   - name: GeneralItemCategoryGroup_MTPOS_MARA
     tests:
     - dbt_expectations.expect_column_value_lengths_to_be_between:
@@ -2191,6 +2177,12 @@ models:
         min_value: 0
         max_value: 1
         row_condition: '`ABC_Indicator_MARC_MAABC` is not null'
+  - name: Checking_Group_Availability_Check_MARC_MTVFP
+    tests:
+    - dbt_expectations.expect_column_value_lengths_to_be_between:
+        min_value: 0
+        max_value: 2
+        row_condition: '`Checking_Group_Availability_Check_MARC_MTVFP` is not null'
   - name: MARC_VINT1
     tests:
     - dbt_expectations.expect_column_value_lengths_to_equal:
@@ -2246,19 +2238,19 @@ models:
     tests:
     - dbt_expectations.expect_column_value_lengths_to_be_between:
         min_value: 0
-        max_value: 8
+        max_value: 4
         row_condition: '`MARC_SSQSS` is not null'
   - name: MARC_ZZMIN_STOCK
     tests:
     - dbt_expectations.expect_column_value_lengths_to_be_between:
         min_value: 0
-        max_value: 9
+        max_value: 10
         row_condition: '`MARC_ZZMIN_STOCK` is not null'
   - name: MARC_ZZMAX_STOCK
     tests:
     - dbt_expectations.expect_column_value_lengths_to_be_between:
         min_value: 0
-        max_value: 7
+        max_value: 6
         row_condition: '`MARC_ZZMAX_STOCK` is not null'
   - name: MARC_FEVOR
     tests:
@@ -2323,7 +2315,7 @@ models:
     tests:
     - dbt_expectations.expect_column_value_lengths_to_be_between:
         min_value: 0
-        max_value: 13
+        max_value: 16
         row_condition: '`MARC_ZZFERTH_KUL` is not null'
   - name: MARC_MAABC
     tests:
@@ -2341,7 +2333,7 @@ models:
     tests:
     - dbt_expectations.expect_column_value_lengths_to_be_between:
         min_value: 0
-        max_value: 35
+        max_value: 39
         row_condition: '`MARC_ZZSUPPRDFAMILY` is not null'
   - name: DChain_MVKE_VMSTA
     tests:
